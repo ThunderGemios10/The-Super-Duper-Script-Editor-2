@@ -1,0 +1,2498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Editor</class>
+ <widget class="QMainWindow" name="Editor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1430</width>
+    <height>648</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1430</width>
+    <height>648</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1430</width>
+    <height>648</height>
+   </size>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::ActionsContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>The Super Duper Script Editor 2</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../res/icons.qrc">
+    <normaloff>:/monokuma.png</normaloff>:/monokuma.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>16</width>
+    <height>16</height>
+   </size>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonTextBesideIcon</enum>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="lblOriginal">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>300</y>
+      <width>480</width>
+      <height>272</height>
+     </rect>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::ActionsContextMenu</enum>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>0</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Meiryo UI</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Translated</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>290</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Meiryo UI</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Original</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>10</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Meiryo UI</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Script Files</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblTranslated">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>480</width>
+      <height>272</height>
+     </rect>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::ActionsContextMenu</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="SmartTextEdit" name="txtTranslated">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>40</y>
+      <width>451</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Meiryo UI</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::DefaultContextMenu</enum>
+    </property>
+    <property name="tabStopWidth">
+     <number>20</number>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>280</y>
+      <width>941</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>440</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Meiryo UI</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Comments</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+    </property>
+   </widget>
+   <widget class="ReferenceEdit" name="txtComments">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>470</y>
+      <width>451</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Meiryo UI</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="tabStopWidth">
+     <number>20</number>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupScene">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>140</y>
+      <width>451</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Scene</string>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>50</y>
+       <width>61</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Sprite</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>61</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Speaker</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>80</y>
+       <width>61</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Mode</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>219</x>
+       <y>50</y>
+       <width>61</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Playback</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>110</y>
+       <width>61</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Scene Info</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>110</y>
+       <width>61</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Area</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnPlayVoice">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>289</x>
+       <y>50</y>
+       <width>27</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>17</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding-left: 1px;</string>
+     </property>
+     <property name="text">
+      <string>▶</string>
+     </property>
+     <property name="shortcut">
+      <string>F5</string>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblScene">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>110</y>
+       <width>151</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="midLineWidth">
+      <number>0</number>
+     </property>
+     <property name="text">
+      <string>Chapter 9, Scene 666</string>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblSpeaker">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>20</y>
+       <width>151</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="midLineWidth">
+      <number>0</number>
+     </property>
+     <property name="text">
+      <string>Mikan Tsumiki</string>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblSprite">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>50</y>
+       <width>151</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="midLineWidth">
+      <number>0</number>
+     </property>
+     <property name="text">
+      <string>Mikan Tsumiki</string>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblMode">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>80</y>
+       <width>151</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="midLineWidth">
+      <number>0</number>
+     </property>
+     <property name="text">
+      <string>Normal</string>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblArea">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>110</y>
+       <width>151</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="midLineWidth">
+      <number>0</number>
+     </property>
+     <property name="text">
+      <string>Titty Typhoon (Parking Lot)</string>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_17">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>20</y>
+       <width>61</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Voice</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblVoice">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>20</y>
+       <width>151</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="midLineWidth">
+      <number>0</number>
+     </property>
+     <property name="text">
+      <string>Mikan Tsumiki</string>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_18">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>80</y>
+       <width>61</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Special</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblSpecial">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>80</y>
+       <width>151</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="midLineWidth">
+      <number>0</number>
+     </property>
+     <property name="text">
+      <string>N/A</string>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnStopVoice">
+     <property name="geometry">
+      <rect>
+       <x>315</x>
+       <y>50</y>
+       <width>27</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MS Shell Dlg 2</family>
+       <pointsize>9</pointsize>
+       <kerning>true</kerning>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding-left: 1px;
+padding-top: 0px;</string>
+     </property>
+     <property name="text">
+      <string>■</string>
+     </property>
+     <property name="shortcut">
+      <string>F6</string>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="Phonon::VolumeSlider" name="volumeSlider">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>50</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximumVolume">
+      <double>1.000000000000000</double>
+     </property>
+     <property name="muteVisible">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QListWidget" name="lstFiles">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>60</y>
+      <width>141</width>
+      <height>512</height>
+     </rect>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::ActionsContextMenu</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <property name="selectionBehavior">
+     <enum>QAbstractItemView::SelectItems</enum>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="flow">
+     <enum>QListView::TopToBottom</enum>
+    </property>
+    <property name="layoutMode">
+     <enum>QListView::SinglePass</enum>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="viewMode">
+     <enum>QListView::ListMode</enum>
+    </property>
+    <property name="modelColumn">
+     <number>0</number>
+    </property>
+    <property name="selectionRectVisible">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblFolderName">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>40</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="lineWidth">
+     <number>1</number>
+    </property>
+    <property name="midLineWidth">
+     <number>0</number>
+    </property>
+    <property name="text">
+     <string notr="true">script_pak_e08_0000.lin</string>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <property name="indent">
+     <number>5</number>
+    </property>
+    <property name="textInteractionFlags">
+     <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>1110</x>
+      <y>10</y>
+      <width>311</width>
+      <height>562</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Meiryo UI</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Related Files</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <widget class="Line" name="line_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>240</y>
+       <width>291</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>260</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Meiryo UI</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Translated</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="txtSimilarTrans">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>290</y>
+       <width>291</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Meiryo UI</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="contextMenuPolicy">
+      <enum>Qt::DefaultContextMenu</enum>
+     </property>
+     <property name="tabChangesFocus">
+      <bool>true</bool>
+     </property>
+     <property name="lineWrapMode">
+      <enum>QPlainTextEdit::WidgetWidth</enum>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="plainText">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="txtSimilarOrig">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>390</y>
+       <width>291</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Meiryo UI</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="contextMenuPolicy">
+      <enum>Qt::DefaultContextMenu</enum>
+     </property>
+     <property name="tabChangesFocus">
+      <bool>true</bool>
+     </property>
+     <property name="lineWrapMode">
+      <enum>QPlainTextEdit::WidgetWidth</enum>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="plainText">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_15">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>360</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Meiryo UI</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Original</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="txtSimilarComm">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>490</y>
+       <width>291</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Meiryo UI</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="contextMenuPolicy">
+      <enum>Qt::DefaultContextMenu</enum>
+     </property>
+     <property name="tabChangesFocus">
+      <bool>true</bool>
+     </property>
+     <property name="lineWrapMode">
+      <enum>QPlainTextEdit::WidgetWidth</enum>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="plainText">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>460</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Meiryo UI</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Comments</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+     </property>
+    </widget>
+    <widget class="QTabWidget" name="tabRelated">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>291</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MS Shell Dlg 2</family>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabDuplicates">
+      <attribute name="title">
+       <string>0 Dupes</string>
+      </attribute>
+      <widget class="QTreeWidget" name="treeDupes">
+       <property name="geometry">
+        <rect>
+         <x>1</x>
+         <y>1</y>
+         <width>283</width>
+         <height>183</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::ActionsContextMenu</enum>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="indentation">
+        <number>15</number>
+       </property>
+       <property name="uniformRowHeights">
+        <bool>true</bool>
+       </property>
+       <property name="animated">
+        <bool>true</bool>
+       </property>
+       <attribute name="headerVisible">
+        <bool>false</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string notr="true">1</string>
+        </property>
+       </column>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tabSimilar">
+      <attribute name="title">
+       <string>0 Similar</string>
+      </attribute>
+      <widget class="QTreeWidget" name="treeSimilar">
+       <property name="geometry">
+        <rect>
+         <x>1</x>
+         <y>1</y>
+         <width>283</width>
+         <height>183</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::ActionsContextMenu</enum>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="autoExpandDelay">
+        <number>-1</number>
+       </property>
+       <property name="indentation">
+        <number>15</number>
+       </property>
+       <property name="rootIsDecorated">
+        <bool>true</bool>
+       </property>
+       <property name="uniformRowHeights">
+        <bool>true</bool>
+       </property>
+       <property name="sortingEnabled">
+        <bool>false</bool>
+       </property>
+       <property name="animated">
+        <bool>true</bool>
+       </property>
+       <property name="allColumnsShowFocus">
+        <bool>false</bool>
+       </property>
+       <property name="columnCount">
+        <number>1</number>
+       </property>
+       <attribute name="headerVisible">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="headerCascadingSectionResizes">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="headerStretchLastSection">
+        <bool>true</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string notr="true">Item</string>
+        </property>
+       </column>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tabReferences">
+      <attribute name="title">
+       <string>0 References</string>
+      </attribute>
+      <widget class="QTreeWidget" name="treeReferences">
+       <property name="geometry">
+        <rect>
+         <x>1</x>
+         <y>1</y>
+         <width>283</width>
+         <height>183</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::ActionsContextMenu</enum>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="autoExpandDelay">
+        <number>-1</number>
+       </property>
+       <property name="indentation">
+        <number>15</number>
+       </property>
+       <property name="rootIsDecorated">
+        <bool>true</bool>
+       </property>
+       <property name="uniformRowHeights">
+        <bool>true</bool>
+       </property>
+       <property name="sortingEnabled">
+        <bool>false</bool>
+       </property>
+       <property name="animated">
+        <bool>true</bool>
+       </property>
+       <property name="allColumnsShowFocus">
+        <bool>false</bool>
+       </property>
+       <property name="columnCount">
+        <number>1</number>
+       </property>
+       <attribute name="headerVisible">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="headerCascadingSectionResizes">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="headerStretchLastSection">
+        <bool>true</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string notr="true">Item</string>
+        </property>
+       </column>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="btnCollapseAll">
+     <property name="geometry">
+      <rect>
+       <x>279</x>
+       <y>30</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MS Shell Dlg 2</family>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnExpandAll">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>30</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MS Shell Dlg 2</family>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>+</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QTabWidget" name="tabsOriginal">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>330</y>
+      <width>451</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::North</enum>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Rounded</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="elideMode">
+     <enum>Qt::ElideNone</enum>
+    </property>
+    <property name="movable">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="tabOrig">
+     <attribute name="title">
+      <string>Original</string>
+     </attribute>
+     <widget class="KeywordEdit" name="txtOriginal">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>-1</x>
+        <y>-1</y>
+        <width>447</width>
+        <height>77</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Meiryo UI</family>
+        <pointsize>11</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <strikeout>false</strikeout>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Meiryo UI'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="tabStopWidth">
+       <number>20</number>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabNoTags">
+     <attribute name="title">
+      <string>No Tags</string>
+     </attribute>
+     <widget class="QPlainTextEdit" name="txtOriginalNoTags">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>-1</x>
+        <y>-1</y>
+        <width>447</width>
+        <height>77</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Meiryo UI</family>
+        <pointsize>11</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <strikeout>false</strikeout>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="tabChangesFocus">
+       <bool>true</bool>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string/>
+      </property>
+      <property name="tabStopWidth">
+       <number>20</number>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabHide">
+     <attribute name="title">
+      <string>Hide</string>
+     </attribute>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="btnCopyFromOrig">
+    <property name="geometry">
+     <rect>
+      <x>851</x>
+      <y>20</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Copy from Original</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnAddQuotes">
+    <property name="geometry">
+     <rect>
+      <x>741</x>
+      <y>20</y>
+      <width>22</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>10</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Double Quotes</string>
+    </property>
+    <property name="text">
+     <string>“”</string>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+'</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnAddDash">
+    <property name="geometry">
+     <rect>
+      <x>699</x>
+      <y>20</y>
+      <width>22</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>10</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Em Dash</string>
+    </property>
+    <property name="text">
+     <string>―</string>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+Shift+_</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="SuperButton" name="btnAddClt">
+    <property name="geometry">
+     <rect>
+      <x>783</x>
+      <y>20</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>8</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="text">
+     <string>CLT</string>
+    </property>
+    <property name="shortcut">
+     <string>Alt+C</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spnClt">
+    <property name="geometry">
+     <rect>
+      <x>815</x>
+      <y>21</y>
+      <width>36</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
+    <property name="maximum">
+     <number>91</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnAddBrackets">
+    <property name="geometry">
+     <rect>
+      <x>762</x>
+      <y>20</y>
+      <width>22</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>10</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Reaction Talk Brackets</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">padding-left: 2px;</string>
+    </property>
+    <property name="text">
+     <string>【】</string>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+[, Ctrl+]</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnAddSingleQuotes">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>20</y>
+      <width>22</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>10</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Single Quotes</string>
+    </property>
+    <property name="text">
+     <string>‘’</string>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+'</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnAddEnDash">
+    <property name="geometry">
+     <rect>
+      <x>678</x>
+      <y>20</y>
+      <width>22</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>10</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>En Dash</string>
+    </property>
+    <property name="text">
+     <string>–</string>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+-</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>65536</width>
+     <height>65536</height>
+    </size>
+   </property>
+   <property name="sizeGripEnabled">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1430</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>true</bool>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionGoToReference"/>
+    <addaction name="actionSave"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="actionShowPrefs"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionInsertCLT"/>
+    <addaction name="actionSearch"/>
+    <addaction name="actionCopyOrig"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <widget class="QMenu" name="menuImportExport">
+     <property name="title">
+      <string>&amp;Import/Export</string>
+     </property>
+     <addaction name="actionConvertPNGGIM"/>
+     <addaction name="actionPropogateDupes"/>
+     <addaction name="actionExportUnique"/>
+     <addaction name="separator"/>
+     <addaction name="actionImportData01"/>
+     <addaction name="actionExportData01"/>
+    </widget>
+    <addaction name="menuImportExport"/>
+    <addaction name="separator"/>
+    <addaction name="actionFontGenerator"/>
+    <addaction name="actionTerminology"/>
+    <addaction name="actionScriptDumper"/>
+    <addaction name="separator"/>
+    <addaction name="actionCalculateProgress"/>
+    <addaction name="actionCheckForErrors"/>
+    <addaction name="actionReloadDupesDB"/>
+    <addaction name="actionBuild"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionFirstFile"/>
+    <addaction name="actionPreviousFile"/>
+    <addaction name="actionNextFile"/>
+    <addaction name="actionLastFile"/>
+    <addaction name="separator"/>
+    <addaction name="actionShowDirectory"/>
+    <addaction name="separator"/>
+    <addaction name="actionConsole"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuSettings"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="contextMenuPolicy">
+    <enum>Qt::ActionsContextMenu</enum>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="locale">
+    <locale language="English" country="UnitedStates"/>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::TopToolBarArea</set>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionOpen"/>
+   <addaction name="actionSave"/>
+   <addaction name="actionReloadDirectory"/>
+   <addaction name="separator"/>
+   <addaction name="actionShowDirectory"/>
+   <addaction name="separator"/>
+   <addaction name="actionFirstFile"/>
+   <addaction name="actionPreviousFile"/>
+   <addaction name="actionNextFile"/>
+   <addaction name="actionLastFile"/>
+   <addaction name="separator"/>
+   <addaction name="actionTerminology"/>
+   <addaction name="actionAutoPlayVoice"/>
+   <addaction name="separator"/>
+   <addaction name="actionInsertLine"/>
+   <addaction name="separator"/>
+   <addaction name="actionSearch"/>
+  </widget>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/folder.png</normaloff>:/folder.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/disk.png</normaloff>:/disk.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/cross.png</normaloff>:/cross.png</iconset>
+   </property>
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/help.png</normaloff>:/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+   <property name="iconText">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionInsertLine">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/new.png</normaloff>:/new.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Insert line after selection</string>
+   </property>
+   <property name="iconText">
+    <string>Insert Line</string>
+   </property>
+  </action>
+  <action name="actionShowPrefs">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/wrench.png</normaloff>:/wrench.png</iconset>
+   </property>
+   <property name="text">
+    <string>Settings</string>
+   </property>
+   <property name="iconText">
+    <string>File Locs</string>
+   </property>
+  </action>
+  <action name="actionSearch">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/magnifier.png</normaloff>:/magnifier.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Search...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionBuild">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/cog_go.png</normaloff>:/cog_go.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Build Archives &amp;&amp; ISO</string>
+   </property>
+   <property name="iconText">
+    <string>Build</string>
+   </property>
+   <property name="toolTip">
+    <string>Build Archives &amp; ISO</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="actionTerminology">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/book.png</normaloff>:/book.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Terminology Editor</string>
+   </property>
+   <property name="iconText">
+    <string>Terms</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionHighlightTerminology">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Highlight Terminology</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+H</string>
+   </property>
+  </action>
+  <action name="actionNextFile">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/resultset_next.png</normaloff>:/resultset_next.png</iconset>
+   </property>
+   <property name="text">
+    <string>Next</string>
+   </property>
+   <property name="iconText">
+    <string>Next</string>
+   </property>
+   <property name="shortcut">
+    <string>PgDown</string>
+   </property>
+  </action>
+  <action name="actionPreviousFile">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/resultset_previous.png</normaloff>:/resultset_previous.png</iconset>
+   </property>
+   <property name="text">
+    <string>Previous</string>
+   </property>
+   <property name="iconText">
+    <string>Prev</string>
+   </property>
+   <property name="shortcut">
+    <string>PgUp</string>
+   </property>
+  </action>
+  <action name="actionAutoExpand">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Auto-Expand Similarity Trees</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+T</string>
+   </property>
+  </action>
+  <action name="actionCopyOrig">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/page_copy.png</normaloff>:/page_copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy Original to Translated</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionAutoPlayVoice">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/sound_mute.png</normaloff>
+     <normalon>:/sound.png</normalon>:/sound_mute.png</iconset>
+   </property>
+   <property name="text">
+    <string>Auto-Play Voice Files</string>
+   </property>
+   <property name="iconText">
+    <string>Voice</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+V</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionReloadDirectory">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/arrow_refresh.png</normaloff>:/arrow_refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reload Directory</string>
+   </property>
+   <property name="iconText">
+    <string>Reload</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionShowDirectory">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/folder_explore.png</normaloff>:/folder_explore.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show in Explorer</string>
+   </property>
+   <property name="iconText">
+    <string>Show Dir</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+D</string>
+   </property>
+  </action>
+  <action name="actionCalculateProgress">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/chart_bar.png</normaloff>:/chart_bar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Calculate Progress</string>
+   </property>
+   <property name="iconText">
+    <string>Progress</string>
+   </property>
+  </action>
+  <action name="actionImportData01">
+   <property name="text">
+    <string>Import to data01</string>
+   </property>
+  </action>
+  <action name="actionImportUmdimage2">
+   <property name="text">
+    <string>...to umdimage2</string>
+   </property>
+  </action>
+  <action name="actionImportOther">
+   <property name="text">
+    <string>...to other directory</string>
+   </property>
+  </action>
+  <action name="actionExportChanges">
+   <property name="text">
+    <string>Export Changes</string>
+   </property>
+  </action>
+  <action name="actionReloadDupesDB">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/database_refresh.png</normaloff>:/database_refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reload &amp;Dupes DB</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionCheckForErrors">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/report.png</normaloff>:/report.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Check for Errors</string>
+   </property>
+   <property name="iconText">
+    <string>Errors</string>
+   </property>
+   <property name="toolTip">
+    <string>Check for errors in the script</string>
+   </property>
+  </action>
+  <action name="actionFirstFile">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/resultset_first.png</normaloff>:/resultset_first.png</iconset>
+   </property>
+   <property name="text">
+    <string>First</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+PgUp</string>
+   </property>
+  </action>
+  <action name="actionLastFile">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/resultset_last.png</normaloff>:/resultset_last.png</iconset>
+   </property>
+   <property name="text">
+    <string>Last</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+PgDown</string>
+   </property>
+  </action>
+  <action name="actionAutoPlayBGM">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/sound_none.png</normaloff>
+     <normalon>:/sound.png</normalon>:/sound_none.png</iconset>
+   </property>
+   <property name="text">
+    <string>Auto-Play BGM Files</string>
+   </property>
+   <property name="iconText">
+    <string>BGM</string>
+   </property>
+   <property name="toolTip">
+    <string>Auto-Play BGM Files</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+B</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionFontGenerator">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/font.png</normaloff>:/font.png</iconset>
+   </property>
+   <property name="text">
+    <string>Font Generator</string>
+   </property>
+  </action>
+  <action name="actionConsole">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/application_xp_terminal.png</normaloff>:/application_xp_terminal.png</iconset>
+   </property>
+   <property name="text">
+    <string>Console</string>
+   </property>
+  </action>
+  <action name="actionInsertCLT">
+   <property name="text">
+    <string>Insert CLT</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionDecompile_All_wrd_Files">
+   <property name="text">
+    <string>Decompile All wrd Files</string>
+   </property>
+  </action>
+  <action name="actionCompile_All_wrd_Files">
+   <property name="text">
+    <string>Compile All wrd Files</string>
+   </property>
+  </action>
+  <action name="actionScriptDumper">
+   <property name="text">
+    <string>Script Dumper</string>
+   </property>
+  </action>
+  <action name="actionConvertPNGGIM">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Convert PNG ↔ GIM</string>
+   </property>
+  </action>
+  <action name="actionConvert_GIM_to_PNG">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Convert GIM to PNG</string>
+   </property>
+  </action>
+  <action name="actionExportData01">
+   <property name="text">
+    <string>Export from data01</string>
+   </property>
+  </action>
+  <action name="actionExportUmdimage2">
+   <property name="text">
+    <string>...from umdimage2</string>
+   </property>
+  </action>
+  <action name="actionExtractTextures">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Extract/insert textures</string>
+   </property>
+  </action>
+  <action name="actionExportUnique">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Only export unique</string>
+   </property>
+  </action>
+  <action name="actionPropogateDupes">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Propogate dupes</string>
+   </property>
+  </action>
+  <action name="actionGoToReference">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/folder_go.png</normaloff>:/folder_go.png</iconset>
+   </property>
+   <property name="text">
+    <string>Go To Reference</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Phonon::VolumeSlider</class>
+   <extends>QWidget</extends>
+   <header location="global">phonon/volumeslider.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KeywordEdit</class>
+   <extends>QTextEdit</extends>
+   <header>keyword_edit</header>
+  </customwidget>
+  <customwidget>
+   <class>ReferenceEdit</class>
+   <extends>QTextEdit</extends>
+   <header>reference_edit</header>
+  </customwidget>
+  <customwidget>
+   <class>SuperButton</class>
+   <extends>QPushButton</extends>
+   <header>super_button</header>
+  </customwidget>
+  <customwidget>
+   <class>SmartTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>smart_text_edit</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>txtTranslated</tabstop>
+  <tabstop>btnAddEnDash</tabstop>
+  <tabstop>btnAddDash</tabstop>
+  <tabstop>btnAddSingleQuotes</tabstop>
+  <tabstop>btnAddQuotes</tabstop>
+  <tabstop>btnAddBrackets</tabstop>
+  <tabstop>btnAddClt</tabstop>
+  <tabstop>spnClt</tabstop>
+  <tabstop>btnCopyFromOrig</tabstop>
+  <tabstop>btnPlayVoice</tabstop>
+  <tabstop>btnStopVoice</tabstop>
+  <tabstop>tabsOriginal</tabstop>
+  <tabstop>txtOriginal</tabstop>
+  <tabstop>txtOriginalNoTags</tabstop>
+  <tabstop>txtComments</tabstop>
+  <tabstop>lstFiles</tabstop>
+  <tabstop>tabRelated</tabstop>
+  <tabstop>btnExpandAll</tabstop>
+  <tabstop>btnCollapseAll</tabstop>
+  <tabstop>treeDupes</tabstop>
+  <tabstop>treeSimilar</tabstop>
+  <tabstop>treeReferences</tabstop>
+  <tabstop>txtSimilarTrans</tabstop>
+  <tabstop>txtSimilarOrig</tabstop>
+  <tabstop>txtSimilarComm</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../res/icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>lstFiles</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>Editor</receiver>
+   <slot>changedScriptFile(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>986</x>
+     <y>461</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>886</x>
+     <y>453</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>treeDupes</sender>
+   <signal>currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)</signal>
+   <receiver>Editor</receiver>
+   <slot>changedDupe(QTreeWidgetItem*,QTreeWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1140</x>
+     <y>191</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1074</x>
+     <y>192</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>treeSimilar</sender>
+   <signal>currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)</signal>
+   <receiver>Editor</receiver>
+   <slot>changedSimilar(QTreeWidgetItem*,QTreeWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1296</x>
+     <y>246</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>910</x>
+     <y>447</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txtTranslated</sender>
+   <signal>textChanged()</signal>
+   <receiver>Editor</receiver>
+   <slot>changedTranslated()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>743</x>
+     <y>100</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>791</x>
+     <y>30</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txtComments</sender>
+   <signal>textChanged()</signal>
+   <receiver>Editor</receiver>
+   <slot>changedComments()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>710</x>
+     <y>536</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>680</x>
+     <y>461</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnExpandAll</sender>
+   <signal>clicked()</signal>
+   <receiver>Editor</receiver>
+   <slot>expandAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1390</x>
+     <y>109</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1318</x>
+     <y>28</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnCollapseAll</sender>
+   <signal>clicked()</signal>
+   <receiver>Editor</receiver>
+   <slot>collapseAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1409</x>
+     <y>109</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1357</x>
+     <y>27</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnCopyFromOrig</sender>
+   <signal>clicked()</signal>
+   <receiver>Editor</receiver>
+   <slot>copyFromOrig()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>882</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>692</x>
+     <y>34</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>treeReferences</sender>
+   <signal>currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)</signal>
+   <receiver>Editor</receiver>
+   <slot>changedReference(QTreeWidgetItem*,QTreeWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1241</x>
+     <y>183</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>909</x>
+     <y>477</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txtTranslated</sender>
+   <signal>cursorPositionChanged()</signal>
+   <receiver>Editor</receiver>
+   <slot>updateStatusCursor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>647</x>
+     <y>130</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>52</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tabsOriginal</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>Editor</receiver>
+   <slot>changedOriginalTab()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>926</x>
+     <y>390</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>722</x>
+     <y>365</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txtOriginal</sender>
+   <signal>textChanged()</signal>
+   <receiver>Editor</receiver>
+   <slot>changedOriginal()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>553</x>
+     <y>423</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>493</x>
+     <y>418</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnStopVoice</sender>
+   <signal>clicked()</signal>
+   <receiver>Editor</receiver>
+   <slot>stopVoice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>841</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>926</x>
+     <y>340</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnPlayVoice</sender>
+   <signal>clicked()</signal>
+   <receiver>Editor</receiver>
+   <slot>playVoice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>815</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>888</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>changedTranslated()</slot>
+  <slot>changedOriginal()</slot>
+  <slot>updateBG()</slot>
+  <slot>updateUI()</slot>
+  <slot>changedScriptFile(int)</slot>
+  <slot>changedDupe(QTreeWidgetItem*,QTreeWidgetItem*)</slot>
+  <slot>changedSimilar(QTreeWidgetItem*,QTreeWidgetItem*)</slot>
+  <slot>changedComments()</slot>
+  <slot>playVoice()</slot>
+  <slot>expandAll()</slot>
+  <slot>collapseAll()</slot>
+  <slot>copyFromOrig()</slot>
+  <slot>insertQuotes()</slot>
+  <slot>insertDash()</slot>
+  <slot>insertClt()</slot>
+  <slot>changedReference(QTreeWidgetItem*,QTreeWidgetItem*)</slot>
+  <slot>stopVoice()</slot>
+  <slot>updateStatusCursor()</slot>
+  <slot>changedOriginalTab()</slot>
+ </slots>
+</ui>

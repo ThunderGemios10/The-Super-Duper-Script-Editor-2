@@ -1,0 +1,43 @@
+﻿# Obviously, don't want compiled stuff.
+*.pyc
+*/*.pyc
+*/*/*.pyc
+*/*/*/*.pyc
+
+*.a
+*.o
+extract/cpk/*.dll
+
+# Or config.
+config*.ini
+
+# Or my silly license template.
+license_template.py
+
+# Or stuff we're not allowed to share
+tools/cpkmakec.exe
+tools/CpkMaker.DLL
+
+# Most of what's in the data folder we don't want going in the repo.
+data/
+# !data/dict/
+# !data/dupes.csv
+# !data/eboot_text.csv
+!data/file_order.txt
+
+# Same with the output of the font_gen stuff.
+font_gen/
+
+# Leave debugging and test stuff out.
+gfx/
+debug/
+ss/
+tests/
+wip/
+famfamfam_silk_icons_v013/
+test.py
+build/
+dist/
+setup.py
+
+### EOF ###

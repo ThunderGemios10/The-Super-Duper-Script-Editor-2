@@ -1,0 +1,39 @@
+//
+//  GIM2PNG - GIM to PNG Conveter ver.0.1
+//
+
+
+//  概要
+GIM形式の画像をαチャンネル付き24bitPNG形式に変換するもの。
+16色や256色の画像でもαチャンネルを利用するため24bit画像に変換されます。
+
+
+//  使用方法
+コマンドプロンプトから
+>GIM2PNG hoge.gim
+とすればGIMファイルと同じ場所にPNGファイルが出力されます。D&DでもOK
+ファイル名の前に-0～-9を指定する事によりPNGの圧縮レベルを変更出来ます。
+省略時は-6です。
+-bを指定するとPNG形式には変換せずBMP形式で出力する事も可能です。
+
+
+//  免責等
+・このツールの使用は自己責任で。
+・このツールの著作権は一応作者にあるらしいです。
+・転載、二次配布はご自由に。
+
+
+//  謝辞
+DXT形式で格納された画像の展開にsquishを使用しています。
+squish - DXT Compression Library
+Copyright (c) 2006 Simon Brown
+http://www.sjbrown.co.uk/?code=squish
+
+
+//  HP
+http://www.geocities.jp/junk2ool/
+
+
+//  履歴
+2008/03/15 ver.0.1
+・公開。

@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FontGenerator</class>
+ <widget class="QDialog" name="FontGenerator">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>570</width>
+    <height>493</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Font Generator - untitled[*]</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../res/icons.qrc">
+    <normaloff>:/monokuma-green.png</normaloff>:/monokuma-green.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="btnNew">
+       <property name="text">
+        <string>&amp;New</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../res/icons.qrc">
+         <normaloff>:/report.png</normaloff>:/report.png</iconset>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+N</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnSave">
+       <property name="text">
+        <string>&amp;Save</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../res/icons.qrc">
+         <normaloff>:/disk.png</normaloff>:/disk.png</iconset>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+S</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnSaveAs">
+       <property name="text">
+        <string>Save As...</string>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+Shift+S</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnLoad">
+       <property name="text">
+        <string>&amp;Open</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../res/icons.qrc">
+         <normaloff>:/folder.png</normaloff>:/folder.png</iconset>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+O</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnGenerateFont">
+       <property name="text">
+        <string>&amp;Generate</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../res/icons.qrc">
+         <normaloff>:/cog.png</normaloff>:/cog.png</iconset>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+G</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabFonts">
+     <property name="currentIndex">
+      <number>-1</number>
+     </property>
+     <property name="tabsClosable">
+      <bool>false</bool>
+     </property>
+     <property name="movable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="btnNewTab">
+       <property name="text">
+        <string>Add Tab</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../res/icons.qrc">
+         <normaloff>:/add.png</normaloff>:/add.png</iconset>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnRemoveTab">
+       <property name="text">
+        <string>Remove</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../res/icons.qrc">
+         <normaloff>:/delete.png</normaloff>:/delete.png</iconset>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Export</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="topMargin">
+       <number>4</number>
+      </property>
+      <property name="bottomMargin">
+       <number>8</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QCheckBox" name="chkGenForGame">
+          <property name="text">
+           <string>Export to data01</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="chkGenForEditor">
+          <property name="text">
+           <string>Export to editor GFX dir</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QRadioButton" name="rdoGenFont1">
+          <property name="text">
+           <string>Font 01 (regular text)</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="rdoGenFont2">
+          <property name="text">
+           <string>Font 02 (Class Trial minigame text)</string>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="title">
+         <string>Tab Priority</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <property name="topMargin">
+          <number>4</number>
+         </property>
+         <property name="bottomMargin">
+          <number>8</number>
+         </property>
+         <item>
+          <widget class="QRadioButton" name="rdoLeftToRight">
+           <property name="text">
+            <string>Left to right</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rdoRightToLeft">
+           <property name="text">
+            <string>Right to left</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnClose">
+       <property name="text">
+        <string>Close</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>tabFonts</tabstop>
+  <tabstop>btnNewTab</tabstop>
+  <tabstop>btnRemoveTab</tabstop>
+  <tabstop>chkGenForGame</tabstop>
+  <tabstop>chkGenForEditor</tabstop>
+  <tabstop>rdoGenFont1</tabstop>
+  <tabstop>rdoGenFont2</tabstop>
+  <tabstop>rdoLeftToRight</tabstop>
+  <tabstop>rdoRightToLeft</tabstop>
+  <tabstop>btnNew</tabstop>
+  <tabstop>btnSave</tabstop>
+  <tabstop>btnSaveAs</tabstop>
+  <tabstop>btnLoad</tabstop>
+  <tabstop>btnGenerateFont</tabstop>
+  <tabstop>btnClose</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../res/icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>btnNewTab</sender>
+   <signal>clicked()</signal>
+   <receiver>FontGenerator</receiver>
+   <slot>add_tab()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>42</x>
+     <y>362</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>200</x>
+     <y>4</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnRemoveTab</sender>
+   <signal>clicked()</signal>
+   <receiver>FontGenerator</receiver>
+   <slot>remove_tab()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>128</x>
+     <y>362</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>312</x>
+     <y>8</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnGenerateFont</sender>
+   <signal>clicked()</signal>
+   <receiver>FontGenerator</receiver>
+   <slot>generate_font()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>543</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>304</x>
+     <y>358</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnClose</sender>
+   <signal>clicked()</signal>
+   <receiver>FontGenerator</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>559</x>
+     <y>470</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>364</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkGenForGame</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>FontGenerator</receiver>
+   <slot>export_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>86</x>
+     <y>405</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>13</x>
+     <y>460</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkGenForEditor</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>FontGenerator</receiver>
+   <slot>export_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>428</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>44</x>
+     <y>465</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rdoGenFont1</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>FontGenerator</receiver>
+   <slot>export_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>196</x>
+     <y>405</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>132</x>
+     <y>464</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rdoGenFont2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>FontGenerator</receiver>
+   <slot>export_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>229</x>
+     <y>428</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>160</x>
+     <y>468</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rdoLeftToRight</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>FontGenerator</receiver>
+   <slot>export_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>376</x>
+     <y>422</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>461</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rdoRightToLeft</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>FontGenerator</receiver>
+   <slot>export_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>468</x>
+     <y>422</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>357</x>
+     <y>469</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnNew</sender>
+   <signal>clicked()</signal>
+   <receiver>FontGenerator</receiver>
+   <slot>new_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>25</x>
+     <y>24</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>25</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnSave</sender>
+   <signal>clicked()</signal>
+   <receiver>FontGenerator</receiver>
+   <slot>save_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>118</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>89</x>
+     <y>15</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnSaveAs</sender>
+   <signal>clicked()</signal>
+   <receiver>FontGenerator</receiver>
+   <slot>save_as_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>205</x>
+     <y>18</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>170</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnLoad</sender>
+   <signal>clicked()</signal>
+   <receiver>FontGenerator</receiver>
+   <slot>load_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>273</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>251</x>
+     <y>27</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>add_tab()</slot>
+  <slot>remove_tab()</slot>
+  <slot>generate_font()</slot>
+  <slot>new_clicked()</slot>
+  <slot>save_clicked()</slot>
+  <slot>save_as_clicked()</slot>
+  <slot>load_clicked()</slot>
+  <slot>export_changed()</slot>
+ </slots>
+</ui>

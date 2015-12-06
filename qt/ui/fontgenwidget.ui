@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FontGenWidget</class>
+ <widget class="QWidget" name="FontGenWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>742</width>
+    <height>464</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>[*]</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Font Settings</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <property name="topMargin">
+       <number>4</number>
+      </property>
+      <property name="bottomMargin">
+       <number>8</number>
+      </property>
+      <item>
+       <widget class="QFontComboBox" name="cboFont">
+        <property name="currentFont">
+         <font>
+          <family>Meiryo UI</family>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Size</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="spnFontSize">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>128</number>
+        </property>
+        <property name="value">
+         <number>11</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Weight</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="spnFontWeight">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="value">
+         <number>50</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Advanced</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="topMargin">
+       <number>4</number>
+      </property>
+      <property name="bottomMargin">
+       <number>8</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <property name="spacing">
+         <number>4</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>X Offset</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spnXOffset">
+            <property name="minimum">
+             <number>-25</number>
+            </property>
+            <property name="maximum">
+             <number>25</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>Y Offset</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spnYOffset">
+            <property name="minimum">
+             <number>-25</number>
+            </property>
+            <property name="maximum">
+             <number>25</number>
+            </property>
+            <property name="value">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <property name="spacing">
+         <number>4</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>X Margin</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spnXMargin">
+            <property name="value">
+             <number>2</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>Y Margin</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spnYMargin">
+            <property name="value">
+             <number>2</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_11">
+        <item>
+         <widget class="QLabel" name="label_12">
+          <property name="text">
+           <string>Y Shift</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="spnYShift">
+          <property name="minimum">
+           <number>-128</number>
+          </property>
+          <property name="maximum">
+           <number>127</number>
+          </property>
+          <property name="value">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="chkTrace">
+        <property name="title">
+         <string>Trace Outlines</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_13">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="topMargin">
+          <number>4</number>
+         </property>
+         <property name="bottomMargin">
+          <number>8</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Pen Size</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="spnPenSize">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="decimals">
+            <number>4</number>
+           </property>
+           <property name="minimum">
+            <double>0.000100000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.333300000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_13">
+           <property name="text">
+            <string>Cap Style</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cboPenCap">
+           <property name="currentIndex">
+            <number>2</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>Square</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Flat</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Round</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>Join Style</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cboPenJoin">
+           <property name="currentIndex">
+            <number>2</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>Miter</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Bevel</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Round</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SVG Miter</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Preview</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblPreview">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>256</width>
+           <height>256</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>256</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: black;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QCheckBox" name="chkBoundingBoxes">
+           <property name="text">
+            <string>Bounding Boxes</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkAutoRefresh">
+           <property name="text">
+            <string>Auto</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnRefreshPreview">
+           <property name="text">
+            <string>Refresh</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Characters</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="txtChars">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Meiryo UI</family>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>Substitutions</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTreeWidget" name="treeSubs">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>192</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="midLineWidth">
+          <number>0</number>
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAsNeeded</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAsNeeded</enum>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <property name="rootIsDecorated">
+          <bool>false</bool>
+         </property>
+         <property name="uniformRowHeights">
+          <bool>true</bool>
+         </property>
+         <property name="itemsExpandable">
+          <bool>false</bool>
+         </property>
+         <property name="sortingEnabled">
+          <bool>true</bool>
+         </property>
+         <attribute name="headerDefaultSectionSize">
+          <number>36</number>
+         </attribute>
+         <attribute name="headerMinimumSectionSize">
+          <number>0</number>
+         </attribute>
+         <attribute name="headerStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Replace</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>With</string>
+          </property>
+         </column>
+         <item>
+          <property name="text">
+           <string>…</string>
+          </property>
+          <property name="text">
+           <string>...</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>\t</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_12">
+         <item>
+          <widget class="QPushButton" name="btnNewSub">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../res/icons.qrc">
+             <normaloff>:/new.png</normaloff>:/new.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnDelSub">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../res/icons.qrc">
+             <normaloff>:/cross.png</normaloff>:/cross.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>cboFont</tabstop>
+  <tabstop>spnFontSize</tabstop>
+  <tabstop>spnFontWeight</tabstop>
+  <tabstop>spnXOffset</tabstop>
+  <tabstop>spnYOffset</tabstop>
+  <tabstop>spnXMargin</tabstop>
+  <tabstop>spnYMargin</tabstop>
+  <tabstop>spnYShift</tabstop>
+  <tabstop>chkBoundingBoxes</tabstop>
+  <tabstop>chkAutoRefresh</tabstop>
+  <tabstop>btnRefreshPreview</tabstop>
+  <tabstop>treeSubs</tabstop>
+  <tabstop>btnNewSub</tabstop>
+  <tabstop>btnDelSub</tabstop>
+  <tabstop>txtChars</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../res/icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>cboFont</sender>
+   <signal>currentFontChanged(QFont)</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>font_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>98</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>25</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spnFontSize</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>font_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>607</x>
+     <y>33</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>331</x>
+     <y>59</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spnFontWeight</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>font_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>695</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>432</x>
+     <y>59</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spnXOffset</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>adv_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>94</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>93</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spnYOffset</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>adv_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>87</x>
+     <y>113</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>218</x>
+     <y>111</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnRefreshPreview</sender>
+   <signal>clicked()</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>update_preview()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>198</x>
+     <y>438</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>304</x>
+     <y>427</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spnXMargin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>adv_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>181</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>218</x>
+     <y>57</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spnYMargin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>adv_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>183</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>537</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spnYShift</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>adv_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>261</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>142</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkBoundingBoxes</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>auto_update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>59</x>
+     <y>442</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>432</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spnPenSize</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>adv_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>420</x>
+     <y>118</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>536</x>
+     <y>35</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnNewSub</sender>
+   <signal>clicked()</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>add_sub()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>560</x>
+     <y>435</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>671</x>
+     <y>438</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnDelSub</sender>
+   <signal>clicked()</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>del_sub()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>589</x>
+     <y>440</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>676</x>
+     <y>427</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>treeSubs</sender>
+   <signal>itemChanged(QTreeWidgetItem*,int)</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>sub_changed(QTreeWidgetItem*,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>592</x>
+     <y>275</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>738</x>
+     <y>151</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txtChars</sender>
+   <signal>textChanged()</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>chars_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>467</x>
+     <y>250</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>742</x>
+     <y>194</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cboPenCap</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>adv_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>506</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>709</x>
+     <y>61</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cboPenJoin</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>adv_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>637</x>
+     <y>109</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>738</x>
+     <y>80</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkTrace</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>FontGenWidget</receiver>
+   <slot>adv_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>347</x>
+     <y>86</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>737</x>
+     <y>113</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>font_changed()</slot>
+  <slot>adv_changed()</slot>
+  <slot>update_preview()</slot>
+  <slot>chars_changed()</slot>
+  <slot>auto_update()</slot>
+  <slot>add_sub()</slot>
+  <slot>del_sub()</slot>
+  <slot>sub_changed(QTreeWidgetItem*,int)</slot>
+ </slots>
+</ui>

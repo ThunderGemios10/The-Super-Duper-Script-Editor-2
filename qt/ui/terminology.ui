@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TerminologyEditor</class>
+ <widget class="QDialog" name="TerminologyEditor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>479</width>
+    <height>341</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>479</width>
+    <height>341</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>479</width>
+    <height>341</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Terminology</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../res/icons.qrc">
+    <normaloff>:/monokuma-green.png</normaloff>:/monokuma-green.png</iconset>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <widget class="QTabWidget" name="tabTerminology">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>364</width>
+     <height>326</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <property name="movable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>General</string>
+    </attribute>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="btnAddSection">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>131</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add Section</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnAddWord">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>30</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add Term</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnDeleteWord">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>90</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete Term</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnDeleteSection">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>191</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete Section</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnClose">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>310</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnEditWord">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>60</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Edit Term</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnRenameSection">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>161</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Rename Section</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>122</y>
+     <width>91</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>223</y>
+     <width>91</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnRefresh">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>232</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Refresh List</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>tabTerminology</tabstop>
+  <tabstop>btnAddWord</tabstop>
+  <tabstop>btnEditWord</tabstop>
+  <tabstop>btnDeleteWord</tabstop>
+  <tabstop>btnAddSection</tabstop>
+  <tabstop>btnRenameSection</tabstop>
+  <tabstop>btnDeleteSection</tabstop>
+  <tabstop>btnClose</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../res/icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>btnClose</sender>
+   <signal>clicked()</signal>
+   <receiver>TerminologyEditor</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>419</x>
+     <y>318</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>396</x>
+     <y>263</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnAddSection</sender>
+   <signal>clicked()</signal>
+   <receiver>TerminologyEditor</receiver>
+   <slot>add_section_button()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>421</x>
+     <y>136</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>326</x>
+     <y>7</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnDeleteSection</sender>
+   <signal>clicked()</signal>
+   <receiver>TerminologyEditor</receiver>
+   <slot>delete_section()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>395</x>
+     <y>199</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>384</x>
+     <y>154</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnAddWord</sender>
+   <signal>clicked()</signal>
+   <receiver>TerminologyEditor</receiver>
+   <slot>add_term_button()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>415</x>
+     <y>39</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>415</x>
+     <y>176</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnDeleteWord</sender>
+   <signal>clicked()</signal>
+   <receiver>TerminologyEditor</receiver>
+   <slot>delete_term()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>434</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>434</x>
+     <y>240</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnEditWord</sender>
+   <signal>clicked()</signal>
+   <receiver>TerminologyEditor</receiver>
+   <slot>edit_term()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>462</x>
+     <y>69</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>437</x>
+     <y>14</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnRenameSection</sender>
+   <signal>clicked()</signal>
+   <receiver>TerminologyEditor</receiver>
+   <slot>rename_section()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>454</x>
+     <y>169</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>454</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnRefresh</sender>
+   <signal>clicked()</signal>
+   <receiver>TerminologyEditor</receiver>
+   <slot>refresh_ui()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>401</x>
+     <y>249</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>382</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>add_section_button()</slot>
+  <slot>delete_section()</slot>
+  <slot>add_term_button()</slot>
+  <slot>delete_term()</slot>
+  <slot>edit_term()</slot>
+  <slot>rename_section()</slot>
+  <slot>refresh_ui()</slot>
+ </slots>
+</ui>
