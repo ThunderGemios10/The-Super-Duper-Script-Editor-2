@@ -2,8 +2,7 @@
 
 # Form implementation generated from reading ui file 'qt\ui\terminology.ui'
 #
-# Created: Tue Jul 16 17:26:49 2013
-#      by: PyQt4 UI code generator 4.8.5
+# Created by: PyQt4 UI code generator 4.11.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,7 +11,16 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    _fromUtf8 = lambda s: s
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_TerminologyEditor(object):
     def setupUi(self, TerminologyEditor):
@@ -25,7 +33,6 @@ class Ui_TerminologyEditor(object):
         TerminologyEditor.setSizePolicy(sizePolicy)
         TerminologyEditor.setMinimumSize(QtCore.QSize(479, 341))
         TerminologyEditor.setMaximumSize(QtCore.QSize(479, 341))
-        TerminologyEditor.setWindowTitle(QtGui.QApplication.translate("TerminologyEditor", "Terminology", None, QtGui.QApplication.UnicodeUTF8))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/monokuma-green.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         TerminologyEditor.setWindowIcon(icon)
@@ -39,31 +46,24 @@ class Ui_TerminologyEditor(object):
         self.tabTerminology.addTab(self.tab, _fromUtf8(""))
         self.btnAddSection = QtGui.QPushButton(TerminologyEditor)
         self.btnAddSection.setGeometry(QtCore.QRect(380, 131, 91, 23))
-        self.btnAddSection.setText(QtGui.QApplication.translate("TerminologyEditor", "Add Section", None, QtGui.QApplication.UnicodeUTF8))
         self.btnAddSection.setObjectName(_fromUtf8("btnAddSection"))
         self.btnAddWord = QtGui.QPushButton(TerminologyEditor)
         self.btnAddWord.setGeometry(QtCore.QRect(380, 30, 91, 23))
-        self.btnAddWord.setText(QtGui.QApplication.translate("TerminologyEditor", "Add Term", None, QtGui.QApplication.UnicodeUTF8))
         self.btnAddWord.setObjectName(_fromUtf8("btnAddWord"))
         self.btnDeleteWord = QtGui.QPushButton(TerminologyEditor)
         self.btnDeleteWord.setGeometry(QtCore.QRect(380, 90, 91, 23))
-        self.btnDeleteWord.setText(QtGui.QApplication.translate("TerminologyEditor", "Delete Term", None, QtGui.QApplication.UnicodeUTF8))
         self.btnDeleteWord.setObjectName(_fromUtf8("btnDeleteWord"))
         self.btnDeleteSection = QtGui.QPushButton(TerminologyEditor)
         self.btnDeleteSection.setGeometry(QtCore.QRect(380, 191, 91, 23))
-        self.btnDeleteSection.setText(QtGui.QApplication.translate("TerminologyEditor", "Delete Section", None, QtGui.QApplication.UnicodeUTF8))
         self.btnDeleteSection.setObjectName(_fromUtf8("btnDeleteSection"))
         self.btnClose = QtGui.QPushButton(TerminologyEditor)
         self.btnClose.setGeometry(QtCore.QRect(380, 310, 91, 23))
-        self.btnClose.setText(QtGui.QApplication.translate("TerminologyEditor", "Close", None, QtGui.QApplication.UnicodeUTF8))
         self.btnClose.setObjectName(_fromUtf8("btnClose"))
         self.btnEditWord = QtGui.QPushButton(TerminologyEditor)
         self.btnEditWord.setGeometry(QtCore.QRect(380, 60, 91, 23))
-        self.btnEditWord.setText(QtGui.QApplication.translate("TerminologyEditor", "Edit Term", None, QtGui.QApplication.UnicodeUTF8))
         self.btnEditWord.setObjectName(_fromUtf8("btnEditWord"))
         self.btnRenameSection = QtGui.QPushButton(TerminologyEditor)
         self.btnRenameSection.setGeometry(QtCore.QRect(380, 161, 91, 23))
-        self.btnRenameSection.setText(QtGui.QApplication.translate("TerminologyEditor", "Rename Section", None, QtGui.QApplication.UnicodeUTF8))
         self.btnRenameSection.setObjectName(_fromUtf8("btnRenameSection"))
         self.line = QtGui.QFrame(TerminologyEditor)
         self.line.setGeometry(QtCore.QRect(380, 122, 91, 3))
@@ -77,7 +77,6 @@ class Ui_TerminologyEditor(object):
         self.line_2.setObjectName(_fromUtf8("line_2"))
         self.btnRefresh = QtGui.QPushButton(TerminologyEditor)
         self.btnRefresh.setGeometry(QtCore.QRect(380, 232, 91, 23))
-        self.btnRefresh.setText(QtGui.QApplication.translate("TerminologyEditor", "Refresh List", None, QtGui.QApplication.UnicodeUTF8))
         self.btnRefresh.setObjectName(_fromUtf8("btnRefresh"))
 
         self.retranslateUi(TerminologyEditor)
@@ -100,6 +99,15 @@ class Ui_TerminologyEditor(object):
         TerminologyEditor.setTabOrder(self.btnDeleteSection, self.btnClose)
 
     def retranslateUi(self, TerminologyEditor):
-        self.tabTerminology.setTabText(self.tabTerminology.indexOf(self.tab), QtGui.QApplication.translate("TerminologyEditor", "General", None, QtGui.QApplication.UnicodeUTF8))
+        TerminologyEditor.setWindowTitle(_translate("TerminologyEditor", "Terminology", None))
+        self.tabTerminology.setTabText(self.tabTerminology.indexOf(self.tab), _translate("TerminologyEditor", "General", None))
+        self.btnAddSection.setText(_translate("TerminologyEditor", "Add Section", None))
+        self.btnAddWord.setText(_translate("TerminologyEditor", "Add Term", None))
+        self.btnDeleteWord.setText(_translate("TerminologyEditor", "Delete Term", None))
+        self.btnDeleteSection.setText(_translate("TerminologyEditor", "Delete Section", None))
+        self.btnClose.setText(_translate("TerminologyEditor", "Close", None))
+        self.btnEditWord.setText(_translate("TerminologyEditor", "Edit Term", None))
+        self.btnRenameSection.setText(_translate("TerminologyEditor", "Rename Section", None))
+        self.btnRefresh.setText(_translate("TerminologyEditor", "Refresh List", None))
 
 import icons_rc

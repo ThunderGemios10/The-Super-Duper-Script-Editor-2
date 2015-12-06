@@ -2,8 +2,7 @@
 
 # Form implementation generated from reading ui file 'qt\ui\nonstopplayer.ui'
 #
-# Created: Tue Jul 16 17:26:48 2013
-#      by: PyQt4 UI code generator 4.8.5
+# Created by: PyQt4 UI code generator 4.11.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,7 +11,16 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    _fromUtf8 = lambda s: s
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_NonstopPlayer(object):
     def setupUi(self, NonstopPlayer):
@@ -20,7 +28,6 @@ class Ui_NonstopPlayer(object):
         NonstopPlayer.resize(498, 311)
         NonstopPlayer.setMinimumSize(QtCore.QSize(498, 311))
         NonstopPlayer.setMaximumSize(QtCore.QSize(498, 311))
-        NonstopPlayer.setWindowTitle(QtGui.QApplication.translate("NonstopPlayer", "Nonstop Debate Player", None, QtGui.QApplication.UnicodeUTF8))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/monokuma.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         NonstopPlayer.setWindowIcon(icon)
@@ -43,6 +50,6 @@ class Ui_NonstopPlayer(object):
         QtCore.QMetaObject.connectSlotsByName(NonstopPlayer)
 
     def retranslateUi(self, NonstopPlayer):
-        pass
+        NonstopPlayer.setWindowTitle(_translate("NonstopPlayer", "Nonstop Debate Player", None))
 
 import icons_rc

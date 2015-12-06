@@ -2,8 +2,7 @@
 
 # Form implementation generated from reading ui file 'qt\ui\anagram.ui'
 #
-# Created: Tue Jul 16 17:26:47 2013
-#      by: PyQt4 UI code generator 4.8.5
+# Created by: PyQt4 UI code generator 4.11.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,7 +11,16 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    _fromUtf8 = lambda s: s
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_Anagram(object):
     def setupUi(self, Anagram):
@@ -20,7 +28,6 @@ class Ui_Anagram(object):
         Anagram.resize(498, 607)
         Anagram.setMinimumSize(QtCore.QSize(498, 607))
         Anagram.setMaximumSize(QtCore.QSize(498, 607))
-        Anagram.setWindowTitle(QtGui.QApplication.translate("Anagram", "Anagram Editor", None, QtGui.QApplication.UnicodeUTF8))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/monokuma.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Anagram.setWindowIcon(icon)
@@ -37,14 +44,12 @@ class Ui_Anagram(object):
         self.lblPreview.setObjectName(_fromUtf8("lblPreview"))
         self.groupBox = QtGui.QGroupBox(Anagram)
         self.groupBox.setGeometry(QtCore.QRect(10, 290, 481, 221))
-        self.groupBox.setTitle(QtGui.QApplication.translate("Anagram", "Solution", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox.setObjectName(_fromUtf8("groupBox"))
         self.txtSolutionTrans = QtGui.QLineEdit(self.groupBox)
         self.txtSolutionTrans.setGeometry(QtCore.QRect(10, 20, 461, 20))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Meiryo UI"))
         self.txtSolutionTrans.setFont(font)
-        self.txtSolutionTrans.setText(QtGui.QApplication.translate("Anagram", "ＨＡＧＡＫＵＲＥ", None, QtGui.QApplication.UnicodeUTF8))
         self.txtSolutionTrans.setMaxLength(15)
         self.txtSolutionTrans.setCursorPosition(0)
         self.txtSolutionTrans.setAlignment(QtCore.Qt.AlignCenter)
@@ -54,7 +59,6 @@ class Ui_Anagram(object):
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Meiryo UI"))
         self.txtSolutionOrig.setFont(font)
-        self.txtSolutionOrig.setText(QtGui.QApplication.translate("Anagram", "はがくれ", None, QtGui.QApplication.UnicodeUTF8))
         self.txtSolutionOrig.setMaxLength(15)
         self.txtSolutionOrig.setAlignment(QtCore.Qt.AlignCenter)
         self.txtSolutionOrig.setReadOnly(True)
@@ -242,32 +246,26 @@ class Ui_Anagram(object):
         self.chkTransHard3.setObjectName(_fromUtf8("chkTransHard3"))
         self.label = QtGui.QLabel(self.groupBox)
         self.label.setGeometry(QtCore.QRect(90, 49, 71, 17))
-        self.label.setText(QtGui.QApplication.translate("Anagram", "Easy", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label.setObjectName(_fromUtf8("label"))
         self.label_2 = QtGui.QLabel(self.groupBox)
         self.label_2.setGeometry(QtCore.QRect(90, 69, 71, 17))
-        self.label_2.setText(QtGui.QApplication.translate("Anagram", "Normal", None, QtGui.QApplication.UnicodeUTF8))
         self.label_2.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_2.setObjectName(_fromUtf8("label_2"))
         self.label_3 = QtGui.QLabel(self.groupBox)
         self.label_3.setGeometry(QtCore.QRect(90, 89, 71, 17))
-        self.label_3.setText(QtGui.QApplication.translate("Anagram", "Hard", None, QtGui.QApplication.UnicodeUTF8))
         self.label_3.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_3.setObjectName(_fromUtf8("label_3"))
         self.label_4 = QtGui.QLabel(self.groupBox)
         self.label_4.setGeometry(QtCore.QRect(90, 149, 71, 17))
-        self.label_4.setText(QtGui.QApplication.translate("Anagram", "Easy", None, QtGui.QApplication.UnicodeUTF8))
         self.label_4.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_4.setObjectName(_fromUtf8("label_4"))
         self.label_5 = QtGui.QLabel(self.groupBox)
         self.label_5.setGeometry(QtCore.QRect(90, 169, 71, 17))
-        self.label_5.setText(QtGui.QApplication.translate("Anagram", "Normal", None, QtGui.QApplication.UnicodeUTF8))
         self.label_5.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_5.setObjectName(_fromUtf8("label_5"))
         self.label_6 = QtGui.QLabel(self.groupBox)
         self.label_6.setGeometry(QtCore.QRect(90, 189, 71, 17))
-        self.label_6.setText(QtGui.QApplication.translate("Anagram", "Hard", None, QtGui.QApplication.UnicodeUTF8))
         self.label_6.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_6.setObjectName(_fromUtf8("label_6"))
         self.label_7 = QtGui.QLabel(self.groupBox)
@@ -276,7 +274,6 @@ class Ui_Anagram(object):
         font.setFamily(_fromUtf8("Meiryo UI"))
         font.setPointSize(16)
         self.label_7.setFont(font)
-        self.label_7.setText(QtGui.QApplication.translate("Anagram", "Translated", None, QtGui.QApplication.UnicodeUTF8))
         self.label_7.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label_7.setObjectName(_fromUtf8("label_7"))
         self.label_8 = QtGui.QLabel(self.groupBox)
@@ -285,7 +282,6 @@ class Ui_Anagram(object):
         font.setFamily(_fromUtf8("Meiryo UI"))
         font.setPointSize(16)
         self.label_8.setFont(font)
-        self.label_8.setText(QtGui.QApplication.translate("Anagram", "Original", None, QtGui.QApplication.UnicodeUTF8))
         self.label_8.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label_8.setObjectName(_fromUtf8("label_8"))
         self.chkOrigEasy10 = QtGui.QCheckBox(self.groupBox)
@@ -472,14 +468,12 @@ class Ui_Anagram(object):
         self.chkOrigNorm6.setObjectName(_fromUtf8("chkOrigNorm6"))
         self.groupBox_2 = QtGui.QGroupBox(Anagram)
         self.groupBox_2.setGeometry(QtCore.QRect(10, 520, 311, 80))
-        self.groupBox_2.setTitle(QtGui.QApplication.translate("Anagram", "Extra Letters", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox_2.setObjectName(_fromUtf8("groupBox_2"))
         self.txtExtraTrans = QtGui.QLineEdit(self.groupBox_2)
         self.txtExtraTrans.setGeometry(QtCore.QRect(70, 20, 231, 20))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Meiryo UI"))
         self.txtExtraTrans.setFont(font)
-        self.txtExtraTrans.setText(QtGui.QApplication.translate("Anagram", "ＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸ", None, QtGui.QApplication.UnicodeUTF8))
         self.txtExtraTrans.setMaxLength(15)
         self.txtExtraTrans.setObjectName(_fromUtf8("txtExtraTrans"))
         self.txtExtraOrig = QtGui.QLineEdit(self.groupBox_2)
@@ -487,18 +481,15 @@ class Ui_Anagram(object):
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Meiryo UI"))
         self.txtExtraOrig.setFont(font)
-        self.txtExtraOrig.setText(QtGui.QApplication.translate("Anagram", "まいぞのなえぎ", None, QtGui.QApplication.UnicodeUTF8))
         self.txtExtraOrig.setMaxLength(15)
         self.txtExtraOrig.setReadOnly(True)
         self.txtExtraOrig.setObjectName(_fromUtf8("txtExtraOrig"))
         self.label_9 = QtGui.QLabel(self.groupBox_2)
         self.label_9.setGeometry(QtCore.QRect(-10, 20, 71, 20))
-        self.label_9.setText(QtGui.QApplication.translate("Anagram", "Translated", None, QtGui.QApplication.UnicodeUTF8))
         self.label_9.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_9.setObjectName(_fromUtf8("label_9"))
         self.label_10 = QtGui.QLabel(self.groupBox_2)
         self.label_10.setGeometry(QtCore.QRect(-10, 50, 71, 20))
-        self.label_10.setText(QtGui.QApplication.translate("Anagram", "Original", None, QtGui.QApplication.UnicodeUTF8))
         self.label_10.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_10.setObjectName(_fromUtf8("label_10"))
 
@@ -605,6 +596,22 @@ class Ui_Anagram(object):
         Anagram.setTabOrder(self.txtExtraOrig, self.buttonBox)
 
     def retranslateUi(self, Anagram):
-        pass
+        Anagram.setWindowTitle(_translate("Anagram", "Anagram Editor", None))
+        self.groupBox.setTitle(_translate("Anagram", "Solution", None))
+        self.txtSolutionTrans.setText(_translate("Anagram", "ＨＡＧＡＫＵＲＥ", None))
+        self.txtSolutionOrig.setText(_translate("Anagram", "はがくれ", None))
+        self.label.setText(_translate("Anagram", "Easy", None))
+        self.label_2.setText(_translate("Anagram", "Normal", None))
+        self.label_3.setText(_translate("Anagram", "Hard", None))
+        self.label_4.setText(_translate("Anagram", "Easy", None))
+        self.label_5.setText(_translate("Anagram", "Normal", None))
+        self.label_6.setText(_translate("Anagram", "Hard", None))
+        self.label_7.setText(_translate("Anagram", "Translated", None))
+        self.label_8.setText(_translate("Anagram", "Original", None))
+        self.groupBox_2.setTitle(_translate("Anagram", "Extra Letters", None))
+        self.txtExtraTrans.setText(_translate("Anagram", "ＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸ", None))
+        self.txtExtraOrig.setText(_translate("Anagram", "まいぞのなえぎ", None))
+        self.label_9.setText(_translate("Anagram", "Translated", None))
+        self.label_10.setText(_translate("Anagram", "Original", None))
 
 import icons_rc

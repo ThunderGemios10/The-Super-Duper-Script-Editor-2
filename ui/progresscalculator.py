@@ -2,8 +2,7 @@
 
 # Form implementation generated from reading ui file 'qt\ui\progress.ui'
 #
-# Created: Tue Jul 16 17:26:48 2013
-#      by: PyQt4 UI code generator 4.8.5
+# Created by: PyQt4 UI code generator 4.11.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,7 +11,16 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    _fromUtf8 = lambda s: s
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_ProgressCalculator(object):
     def setupUi(self, ProgressCalculator):
@@ -23,7 +31,6 @@ class Ui_ProgressCalculator(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(ProgressCalculator.sizePolicy().hasHeightForWidth())
         ProgressCalculator.setSizePolicy(sizePolicy)
-        ProgressCalculator.setWindowTitle(QtGui.QApplication.translate("ProgressCalculator", "Progress Calculator", None, QtGui.QApplication.UnicodeUTF8))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/chart_bar.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         ProgressCalculator.setWindowIcon(icon)
@@ -44,12 +51,11 @@ class Ui_ProgressCalculator(object):
         font = QtGui.QFont()
         font.setPointSize(8)
         self.groupBox_3.setFont(font)
-        self.groupBox_3.setTitle(QtGui.QApplication.translate("ProgressCalculator", "Filter", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox_3.setFlat(False)
         self.groupBox_3.setObjectName(_fromUtf8("groupBox_3"))
         self.verticalLayout_4 = QtGui.QVBoxLayout(self.groupBox_3)
-        self.verticalLayout_4.setSpacing(2)
         self.verticalLayout_4.setContentsMargins(-1, 2, -1, 8)
+        self.verticalLayout_4.setSpacing(2)
         self.verticalLayout_4.setObjectName(_fromUtf8("verticalLayout_4"))
         self.horizontalLayout_3 = QtGui.QHBoxLayout()
         self.horizontalLayout_3.setSpacing(0)
@@ -61,7 +67,6 @@ class Ui_ProgressCalculator(object):
         font = QtGui.QFont()
         font.setPointSize(7)
         self.btnFilterSelAll.setFont(font)
-        self.btnFilterSelAll.setText(QtGui.QApplication.translate("ProgressCalculator", "Select All", None, QtGui.QApplication.UnicodeUTF8))
         self.btnFilterSelAll.setObjectName(_fromUtf8("btnFilterSelAll"))
         self.horizontalLayout_3.addWidget(self.btnFilterSelAll)
         self.btnFilterSelNone = QtGui.QToolButton(self.groupBox_3)
@@ -69,7 +74,6 @@ class Ui_ProgressCalculator(object):
         font = QtGui.QFont()
         font.setPointSize(7)
         self.btnFilterSelNone.setFont(font)
-        self.btnFilterSelNone.setText(QtGui.QApplication.translate("ProgressCalculator", "None", None, QtGui.QApplication.UnicodeUTF8))
         self.btnFilterSelNone.setObjectName(_fromUtf8("btnFilterSelNone"))
         self.horizontalLayout_3.addWidget(self.btnFilterSelNone)
         spacerItem2 = QtGui.QSpacerItem(1, 1, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
@@ -79,83 +83,69 @@ class Ui_ProgressCalculator(object):
         self.layoutSearchFilter.setObjectName(_fromUtf8("layoutSearchFilter"))
         self.chkSearchPlg = QtGui.QCheckBox(self.groupBox_3)
         self.chkSearchPlg.setMaximumSize(QtCore.QSize(16777215, 14))
-        self.chkSearchPlg.setText(QtGui.QApplication.translate("ProgressCalculator", "PLG", None, QtGui.QApplication.UnicodeUTF8))
         self.chkSearchPlg.setChecked(False)
         self.chkSearchPlg.setObjectName(_fromUtf8("chkSearchPlg"))
         self.layoutSearchFilter.addWidget(self.chkSearchPlg, 0, 0, 1, 1)
         self.chkSearchCh1 = QtGui.QCheckBox(self.groupBox_3)
         self.chkSearchCh1.setMaximumSize(QtCore.QSize(16777215, 14))
-        self.chkSearchCh1.setText(QtGui.QApplication.translate("ProgressCalculator", "CH1", None, QtGui.QApplication.UnicodeUTF8))
         self.chkSearchCh1.setChecked(False)
         self.chkSearchCh1.setObjectName(_fromUtf8("chkSearchCh1"))
         self.layoutSearchFilter.addWidget(self.chkSearchCh1, 0, 1, 1, 1)
         self.chkSearchCh2 = QtGui.QCheckBox(self.groupBox_3)
         self.chkSearchCh2.setMaximumSize(QtCore.QSize(16777215, 14))
-        self.chkSearchCh2.setText(QtGui.QApplication.translate("ProgressCalculator", "CH2", None, QtGui.QApplication.UnicodeUTF8))
         self.chkSearchCh2.setChecked(False)
         self.chkSearchCh2.setObjectName(_fromUtf8("chkSearchCh2"))
         self.layoutSearchFilter.addWidget(self.chkSearchCh2, 0, 2, 1, 1)
         self.chkSearchEtc = QtGui.QCheckBox(self.groupBox_3)
         self.chkSearchEtc.setMaximumSize(QtCore.QSize(16777215, 14))
-        self.chkSearchEtc.setText(QtGui.QApplication.translate("ProgressCalculator", "ETC", None, QtGui.QApplication.UnicodeUTF8))
         self.chkSearchEtc.setChecked(False)
         self.chkSearchEtc.setObjectName(_fromUtf8("chkSearchEtc"))
         self.layoutSearchFilter.addWidget(self.chkSearchEtc, 4, 1, 1, 1)
         self.chkSearchNvl = QtGui.QCheckBox(self.groupBox_3)
         self.chkSearchNvl.setMaximumSize(QtCore.QSize(16777215, 14))
-        self.chkSearchNvl.setText(QtGui.QApplication.translate("ProgressCalculator", "NVL", None, QtGui.QApplication.UnicodeUTF8))
         self.chkSearchNvl.setObjectName(_fromUtf8("chkSearchNvl"))
         self.layoutSearchFilter.addWidget(self.chkSearchNvl, 3, 2, 1, 1)
         self.chkSearchCh6 = QtGui.QCheckBox(self.groupBox_3)
         self.chkSearchCh6.setMaximumSize(QtCore.QSize(16777215, 14))
-        self.chkSearchCh6.setText(QtGui.QApplication.translate("ProgressCalculator", "CH6", None, QtGui.QApplication.UnicodeUTF8))
         self.chkSearchCh6.setChecked(False)
         self.chkSearchCh6.setObjectName(_fromUtf8("chkSearchCh6"))
         self.layoutSearchFilter.addWidget(self.chkSearchCh6, 2, 0, 1, 1)
         self.chkSearchEpg = QtGui.QCheckBox(self.groupBox_3)
         self.chkSearchEpg.setMaximumSize(QtCore.QSize(16777215, 14))
-        self.chkSearchEpg.setText(QtGui.QApplication.translate("ProgressCalculator", "EPG", None, QtGui.QApplication.UnicodeUTF8))
         self.chkSearchEpg.setChecked(False)
         self.chkSearchEpg.setObjectName(_fromUtf8("chkSearchEpg"))
         self.layoutSearchFilter.addWidget(self.chkSearchEpg, 2, 1, 1, 1)
         self.chkSearchCh5 = QtGui.QCheckBox(self.groupBox_3)
         self.chkSearchCh5.setMaximumSize(QtCore.QSize(16777215, 14))
-        self.chkSearchCh5.setText(QtGui.QApplication.translate("ProgressCalculator", "CH5", None, QtGui.QApplication.UnicodeUTF8))
         self.chkSearchCh5.setChecked(False)
         self.chkSearchCh5.setObjectName(_fromUtf8("chkSearchCh5"))
         self.layoutSearchFilter.addWidget(self.chkSearchCh5, 1, 2, 1, 1)
         self.chkSearchCh4 = QtGui.QCheckBox(self.groupBox_3)
         self.chkSearchCh4.setMaximumSize(QtCore.QSize(16777215, 14))
-        self.chkSearchCh4.setText(QtGui.QApplication.translate("ProgressCalculator", "CH4", None, QtGui.QApplication.UnicodeUTF8))
         self.chkSearchCh4.setChecked(False)
         self.chkSearchCh4.setObjectName(_fromUtf8("chkSearchCh4"))
         self.layoutSearchFilter.addWidget(self.chkSearchCh4, 1, 1, 1, 1)
         self.chkSearchCh3 = QtGui.QCheckBox(self.groupBox_3)
         self.chkSearchCh3.setMaximumSize(QtCore.QSize(16777215, 14))
-        self.chkSearchCh3.setText(QtGui.QApplication.translate("ProgressCalculator", "CH3", None, QtGui.QApplication.UnicodeUTF8))
         self.chkSearchCh3.setChecked(False)
         self.chkSearchCh3.setObjectName(_fromUtf8("chkSearchCh3"))
         self.layoutSearchFilter.addWidget(self.chkSearchCh3, 1, 0, 1, 1)
         self.chkSearchSys = QtGui.QCheckBox(self.groupBox_3)
         self.chkSearchSys.setMaximumSize(QtCore.QSize(16777215, 14))
-        self.chkSearchSys.setText(QtGui.QApplication.translate("ProgressCalculator", "SYS", None, QtGui.QApplication.UnicodeUTF8))
         self.chkSearchSys.setChecked(False)
         self.chkSearchSys.setObjectName(_fromUtf8("chkSearchSys"))
         self.layoutSearchFilter.addWidget(self.chkSearchSys, 2, 2, 1, 1)
         self.chkSearchIsl = QtGui.QCheckBox(self.groupBox_3)
         self.chkSearchIsl.setMaximumSize(QtCore.QSize(16777215, 14))
-        self.chkSearchIsl.setText(QtGui.QApplication.translate("ProgressCalculator", "ISL", None, QtGui.QApplication.UnicodeUTF8))
         self.chkSearchIsl.setObjectName(_fromUtf8("chkSearchIsl"))
         self.layoutSearchFilter.addWidget(self.chkSearchIsl, 3, 1, 1, 1)
         self.chkSearchFt = QtGui.QCheckBox(self.groupBox_3)
         self.chkSearchFt.setMaximumSize(QtCore.QSize(16777215, 14))
-        self.chkSearchFt.setText(QtGui.QApplication.translate("ProgressCalculator", "FT", None, QtGui.QApplication.UnicodeUTF8))
         self.chkSearchFt.setChecked(False)
         self.chkSearchFt.setObjectName(_fromUtf8("chkSearchFt"))
         self.layoutSearchFilter.addWidget(self.chkSearchFt, 3, 0, 1, 1)
         self.verticalLayout_4.addLayout(self.layoutSearchFilter)
         self.label = QtGui.QLabel(self.groupBox_3)
-        self.label.setText(QtGui.QApplication.translate("ProgressCalculator", "Filter Regex", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setObjectName(_fromUtf8("label"))
         self.verticalLayout_4.addWidget(self.label)
         self.txtFilterRe = QtGui.QLineEdit(self.groupBox_3)
@@ -166,11 +156,6 @@ class Ui_ProgressCalculator(object):
         self.verticalLayout_3.addItem(spacerItem3)
         self.horizontalLayout.addLayout(self.verticalLayout_3)
         self.lblResults = QtGui.QLabel(ProgressCalculator)
-        self.lblResults.setText(QtGui.QApplication.translate("ProgressCalculator", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; font-weight:600;\">Results</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.lblResults.setTextFormat(QtCore.Qt.AutoText)
         self.lblResults.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.lblResults.setWordWrap(True)
@@ -187,7 +172,6 @@ class Ui_ProgressCalculator(object):
         self.progressBar.setTextVisible(True)
         self.progressBar.setInvertedAppearance(False)
         self.progressBar.setTextDirection(QtGui.QProgressBar.TopToBottom)
-        self.progressBar.setFormat(QtGui.QApplication.translate("ProgressCalculator", "%p%", None, QtGui.QApplication.UnicodeUTF8))
         self.progressBar.setObjectName(_fromUtf8("progressBar"))
         self.horizontalLayout_4.addWidget(self.progressBar)
         self.lblTimeElapsed = QtGui.QLabel(ProgressCalculator)
@@ -196,11 +180,6 @@ class Ui_ProgressCalculator(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.lblTimeElapsed.sizePolicy().hasHeightForWidth())
         self.lblTimeElapsed.setSizePolicy(sizePolicy)
-        self.lblTimeElapsed.setText(QtGui.QApplication.translate("ProgressCalculator", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">00:00</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.lblTimeElapsed.setAlignment(QtCore.Qt.AlignCenter)
         self.lblTimeElapsed.setObjectName(_fromUtf8("lblTimeElapsed"))
         self.horizontalLayout_4.addWidget(self.lblTimeElapsed)
@@ -210,15 +189,12 @@ class Ui_ProgressCalculator(object):
         spacerItem4 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem4)
         self.btnCalculate = QtGui.QPushButton(ProgressCalculator)
-        self.btnCalculate.setText(QtGui.QApplication.translate("ProgressCalculator", "Calculate", None, QtGui.QApplication.UnicodeUTF8))
         self.btnCalculate.setObjectName(_fromUtf8("btnCalculate"))
         self.horizontalLayout_2.addWidget(self.btnCalculate)
         self.btnStop = QtGui.QPushButton(ProgressCalculator)
-        self.btnStop.setText(QtGui.QApplication.translate("ProgressCalculator", "Stop", None, QtGui.QApplication.UnicodeUTF8))
         self.btnStop.setObjectName(_fromUtf8("btnStop"))
         self.horizontalLayout_2.addWidget(self.btnStop)
         self.btnClose = QtGui.QPushButton(ProgressCalculator)
-        self.btnClose.setText(QtGui.QApplication.translate("ProgressCalculator", "Close", None, QtGui.QApplication.UnicodeUTF8))
         self.btnClose.setObjectName(_fromUtf8("btnClose"))
         self.horizontalLayout_2.addWidget(self.btnClose)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
@@ -230,6 +206,37 @@ class Ui_ProgressCalculator(object):
         QtCore.QMetaObject.connectSlotsByName(ProgressCalculator)
 
     def retranslateUi(self, ProgressCalculator):
-        pass
+        ProgressCalculator.setWindowTitle(_translate("ProgressCalculator", "Progress Calculator", None))
+        self.groupBox_3.setTitle(_translate("ProgressCalculator", "Filter", None))
+        self.btnFilterSelAll.setText(_translate("ProgressCalculator", "Select All", None))
+        self.btnFilterSelNone.setText(_translate("ProgressCalculator", "None", None))
+        self.chkSearchPlg.setText(_translate("ProgressCalculator", "PLG", None))
+        self.chkSearchCh1.setText(_translate("ProgressCalculator", "CH1", None))
+        self.chkSearchCh2.setText(_translate("ProgressCalculator", "CH2", None))
+        self.chkSearchEtc.setText(_translate("ProgressCalculator", "ETC", None))
+        self.chkSearchNvl.setText(_translate("ProgressCalculator", "NVL", None))
+        self.chkSearchCh6.setText(_translate("ProgressCalculator", "CH6", None))
+        self.chkSearchEpg.setText(_translate("ProgressCalculator", "EPG", None))
+        self.chkSearchCh5.setText(_translate("ProgressCalculator", "CH5", None))
+        self.chkSearchCh4.setText(_translate("ProgressCalculator", "CH4", None))
+        self.chkSearchCh3.setText(_translate("ProgressCalculator", "CH3", None))
+        self.chkSearchSys.setText(_translate("ProgressCalculator", "SYS", None))
+        self.chkSearchIsl.setText(_translate("ProgressCalculator", "ISL", None))
+        self.chkSearchFt.setText(_translate("ProgressCalculator", "FT", None))
+        self.label.setText(_translate("ProgressCalculator", "Filter Regex", None))
+        self.lblResults.setText(_translate("ProgressCalculator", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; font-weight:600;\">Results</span></p></body></html>", None))
+        self.progressBar.setFormat(_translate("ProgressCalculator", "%p%", None))
+        self.lblTimeElapsed.setText(_translate("ProgressCalculator", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">00:00</span></p></body></html>", None))
+        self.btnCalculate.setText(_translate("ProgressCalculator", "Calculate", None))
+        self.btnStop.setText(_translate("ProgressCalculator", "Stop", None))
+        self.btnClose.setText(_translate("ProgressCalculator", "Close", None))
 
 import icons_rc

@@ -2,8 +2,7 @@
 
 # Form implementation generated from reading ui file 'qt\ui\openmenu.ui'
 #
-# Created: Tue Jul 16 17:26:48 2013
-#      by: PyQt4 UI code generator 4.8.5
+# Created by: PyQt4 UI code generator 4.11.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,7 +11,16 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    _fromUtf8 = lambda s: s
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_OpenMenu(object):
     def setupUi(self, OpenMenu):
@@ -20,7 +28,6 @@ class Ui_OpenMenu(object):
         OpenMenu.resize(480, 324)
         OpenMenu.setMinimumSize(QtCore.QSize(480, 324))
         OpenMenu.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        OpenMenu.setWindowTitle(QtGui.QApplication.translate("OpenMenu", "Open", None, QtGui.QApplication.UnicodeUTF8))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/monokuma-green.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         OpenMenu.setWindowIcon(icon)
@@ -36,7 +43,6 @@ class Ui_OpenMenu(object):
         self.treeFileList.setIndentation(15)
         self.treeFileList.setAnimated(True)
         self.treeFileList.setObjectName(_fromUtf8("treeFileList"))
-        self.treeFileList.headerItem().setText(0, QtGui.QApplication.translate("OpenMenu", "1", None, QtGui.QApplication.UnicodeUTF8))
         self.treeFileList.header().setVisible(False)
         self.horizontalLayout.addWidget(self.treeFileList)
         self.verticalLayout = QtGui.QVBoxLayout()
@@ -49,7 +55,6 @@ class Ui_OpenMenu(object):
         font.setFamily(_fromUtf8("Meiryo UI"))
         font.setPointSize(11)
         self.label.setFont(font)
-        self.label.setText(QtGui.QApplication.translate("OpenMenu", "Chapter", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setObjectName(_fromUtf8("label"))
         self.horizontalLayout_2.addWidget(self.label)
         self.btnRefresh = QtGui.QToolButton(OpenMenu)
@@ -68,7 +73,6 @@ class Ui_OpenMenu(object):
         self.horizontalLayout_2.addWidget(self.btnRefresh)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
         self.lblChapter = QtGui.QLabel(OpenMenu)
-        self.lblChapter.setText(QtGui.QApplication.translate("OpenMenu", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
         self.lblChapter.setIndent(10)
         self.lblChapter.setObjectName(_fromUtf8("lblChapter"))
         self.verticalLayout.addWidget(self.lblChapter)
@@ -77,11 +81,9 @@ class Ui_OpenMenu(object):
         font.setFamily(_fromUtf8("Meiryo UI"))
         font.setPointSize(11)
         self.label_3.setFont(font)
-        self.label_3.setText(QtGui.QApplication.translate("OpenMenu", "Scene", None, QtGui.QApplication.UnicodeUTF8))
         self.label_3.setObjectName(_fromUtf8("label_3"))
         self.verticalLayout.addWidget(self.label_3)
         self.lblScene = QtGui.QLabel(OpenMenu)
-        self.lblScene.setText(QtGui.QApplication.translate("OpenMenu", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
         self.lblScene.setIndent(10)
         self.lblScene.setObjectName(_fromUtf8("lblScene"))
         self.verticalLayout.addWidget(self.lblScene)
@@ -90,11 +92,9 @@ class Ui_OpenMenu(object):
         font.setFamily(_fromUtf8("Meiryo UI"))
         font.setPointSize(11)
         self.label_4.setFont(font)
-        self.label_4.setText(QtGui.QApplication.translate("OpenMenu", "Room", None, QtGui.QApplication.UnicodeUTF8))
         self.label_4.setObjectName(_fromUtf8("label_4"))
         self.verticalLayout.addWidget(self.label_4)
         self.lblRoom = QtGui.QLabel(OpenMenu)
-        self.lblRoom.setText(QtGui.QApplication.translate("OpenMenu", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
         self.lblRoom.setIndent(10)
         self.lblRoom.setObjectName(_fromUtf8("lblRoom"))
         self.verticalLayout.addWidget(self.lblRoom)
@@ -103,11 +103,9 @@ class Ui_OpenMenu(object):
         font.setFamily(_fromUtf8("Meiryo UI"))
         font.setPointSize(11)
         self.label_6.setFont(font)
-        self.label_6.setText(QtGui.QApplication.translate("OpenMenu", "Mode", None, QtGui.QApplication.UnicodeUTF8))
         self.label_6.setObjectName(_fromUtf8("label_6"))
         self.verticalLayout.addWidget(self.label_6)
         self.lblMode = QtGui.QLabel(OpenMenu)
-        self.lblMode.setText(QtGui.QApplication.translate("OpenMenu", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
         self.lblMode.setIndent(10)
         self.lblMode.setObjectName(_fromUtf8("lblMode"))
         self.verticalLayout.addWidget(self.lblMode)
@@ -118,7 +116,6 @@ class Ui_OpenMenu(object):
         font.setFamily(_fromUtf8("Meiryo UI"))
         font.setPointSize(11)
         self.label_2.setFont(font)
-        self.label_2.setText(QtGui.QApplication.translate("OpenMenu", "Search", None, QtGui.QApplication.UnicodeUTF8))
         self.label_2.setObjectName(_fromUtf8("label_2"))
         self.verticalLayout.addWidget(self.label_2)
         self.txtSearch = QtGui.QLineEdit(OpenMenu)
@@ -141,6 +138,16 @@ class Ui_OpenMenu(object):
         QtCore.QMetaObject.connectSlotsByName(OpenMenu)
 
     def retranslateUi(self, OpenMenu):
-        pass
+        OpenMenu.setWindowTitle(_translate("OpenMenu", "Open", None))
+        self.treeFileList.headerItem().setText(0, _translate("OpenMenu", "1", None))
+        self.label.setText(_translate("OpenMenu", "Chapter", None))
+        self.lblChapter.setText(_translate("OpenMenu", "TextLabel", None))
+        self.label_3.setText(_translate("OpenMenu", "Scene", None))
+        self.lblScene.setText(_translate("OpenMenu", "TextLabel", None))
+        self.label_4.setText(_translate("OpenMenu", "Room", None))
+        self.lblRoom.setText(_translate("OpenMenu", "TextLabel", None))
+        self.label_6.setText(_translate("OpenMenu", "Mode", None))
+        self.lblMode.setText(_translate("OpenMenu", "TextLabel", None))
+        self.label_2.setText(_translate("OpenMenu", "Search", None))
 
 import icons_rc
