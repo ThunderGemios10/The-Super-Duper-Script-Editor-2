@@ -2,7 +2,8 @@
 
 # Form implementation generated from reading ui file 'qt\ui\fontgen.ui'
 #
-# Created by: PyQt4 UI code generator 4.11.4
+# Created: Tue Jul 16 17:26:47 2013
+#      by: PyQt4 UI code generator 4.8.5
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -11,21 +12,13 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    def _fromUtf8(s):
-        return s
-
-try:
-    _encoding = QtGui.QApplication.UnicodeUTF8
-    def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig, _encoding)
-except AttributeError:
-    def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig)
+    _fromUtf8 = lambda s: s
 
 class Ui_FontGenerator(object):
     def setupUi(self, FontGenerator):
         FontGenerator.setObjectName(_fromUtf8("FontGenerator"))
         FontGenerator.resize(570, 493)
+        FontGenerator.setWindowTitle(QtGui.QApplication.translate("FontGenerator", "Font Generator - untitled[*]", None, QtGui.QApplication.UnicodeUTF8))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/monokuma-green.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         FontGenerator.setWindowIcon(icon)
@@ -34,36 +27,46 @@ class Ui_FontGenerator(object):
         self.horizontalLayout_2 = QtGui.QHBoxLayout()
         self.horizontalLayout_2.setObjectName(_fromUtf8("horizontalLayout_2"))
         self.btnNew = QtGui.QPushButton(FontGenerator)
+        self.btnNew.setText(QtGui.QApplication.translate("FontGenerator", "&New", None, QtGui.QApplication.UnicodeUTF8))
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(_fromUtf8(":/report.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnNew.setIcon(icon1)
+        self.btnNew.setShortcut(QtGui.QApplication.translate("FontGenerator", "Ctrl+N", None, QtGui.QApplication.UnicodeUTF8))
         self.btnNew.setAutoDefault(False)
         self.btnNew.setObjectName(_fromUtf8("btnNew"))
         self.horizontalLayout_2.addWidget(self.btnNew)
         self.btnSave = QtGui.QPushButton(FontGenerator)
+        self.btnSave.setText(QtGui.QApplication.translate("FontGenerator", "&Save", None, QtGui.QApplication.UnicodeUTF8))
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap(_fromUtf8(":/disk.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnSave.setIcon(icon2)
+        self.btnSave.setShortcut(QtGui.QApplication.translate("FontGenerator", "Ctrl+S", None, QtGui.QApplication.UnicodeUTF8))
         self.btnSave.setAutoDefault(False)
         self.btnSave.setObjectName(_fromUtf8("btnSave"))
         self.horizontalLayout_2.addWidget(self.btnSave)
         self.btnSaveAs = QtGui.QPushButton(FontGenerator)
+        self.btnSaveAs.setText(QtGui.QApplication.translate("FontGenerator", "Save As...", None, QtGui.QApplication.UnicodeUTF8))
+        self.btnSaveAs.setShortcut(QtGui.QApplication.translate("FontGenerator", "Ctrl+Shift+S", None, QtGui.QApplication.UnicodeUTF8))
         self.btnSaveAs.setAutoDefault(False)
         self.btnSaveAs.setObjectName(_fromUtf8("btnSaveAs"))
         self.horizontalLayout_2.addWidget(self.btnSaveAs)
         self.btnLoad = QtGui.QPushButton(FontGenerator)
+        self.btnLoad.setText(QtGui.QApplication.translate("FontGenerator", "&Open", None, QtGui.QApplication.UnicodeUTF8))
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap(_fromUtf8(":/folder.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnLoad.setIcon(icon3)
+        self.btnLoad.setShortcut(QtGui.QApplication.translate("FontGenerator", "Ctrl+O", None, QtGui.QApplication.UnicodeUTF8))
         self.btnLoad.setAutoDefault(False)
         self.btnLoad.setObjectName(_fromUtf8("btnLoad"))
         self.horizontalLayout_2.addWidget(self.btnLoad)
         spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem)
         self.btnGenerateFont = QtGui.QPushButton(FontGenerator)
+        self.btnGenerateFont.setText(QtGui.QApplication.translate("FontGenerator", "&Generate", None, QtGui.QApplication.UnicodeUTF8))
         icon4 = QtGui.QIcon()
         icon4.addPixmap(QtGui.QPixmap(_fromUtf8(":/cog.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnGenerateFont.setIcon(icon4)
+        self.btnGenerateFont.setShortcut(QtGui.QApplication.translate("FontGenerator", "Ctrl+G", None, QtGui.QApplication.UnicodeUTF8))
         self.btnGenerateFont.setAutoDefault(False)
         self.btnGenerateFont.setObjectName(_fromUtf8("btnGenerateFont"))
         self.horizontalLayout_2.addWidget(self.btnGenerateFont)
@@ -81,6 +84,7 @@ class Ui_FontGenerator(object):
         self.horizontalLayout = QtGui.QHBoxLayout()
         self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
         self.btnNewTab = QtGui.QPushButton(FontGenerator)
+        self.btnNewTab.setText(QtGui.QApplication.translate("FontGenerator", "Add Tab", None, QtGui.QApplication.UnicodeUTF8))
         icon5 = QtGui.QIcon()
         icon5.addPixmap(QtGui.QPixmap(_fromUtf8(":/add.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnNewTab.setIcon(icon5)
@@ -88,6 +92,7 @@ class Ui_FontGenerator(object):
         self.btnNewTab.setObjectName(_fromUtf8("btnNewTab"))
         self.horizontalLayout.addWidget(self.btnNewTab)
         self.btnRemoveTab = QtGui.QPushButton(FontGenerator)
+        self.btnRemoveTab.setText(QtGui.QApplication.translate("FontGenerator", "Remove", None, QtGui.QApplication.UnicodeUTF8))
         icon6 = QtGui.QIcon()
         icon6.addPixmap(QtGui.QPixmap(_fromUtf8(":/delete.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnRemoveTab.setIcon(icon6)
@@ -98,6 +103,7 @@ class Ui_FontGenerator(object):
         self.horizontalLayout.addItem(spacerItem1)
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.groupBox = QtGui.QGroupBox(FontGenerator)
+        self.groupBox.setTitle(QtGui.QApplication.translate("FontGenerator", "Export", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox.setObjectName(_fromUtf8("groupBox"))
         self.horizontalLayout_3 = QtGui.QHBoxLayout(self.groupBox)
         self.horizontalLayout_3.setContentsMargins(-1, 4, -1, 8)
@@ -105,10 +111,12 @@ class Ui_FontGenerator(object):
         self.verticalLayout_2 = QtGui.QVBoxLayout()
         self.verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
         self.chkGenForGame = QtGui.QCheckBox(self.groupBox)
+        self.chkGenForGame.setText(QtGui.QApplication.translate("FontGenerator", "Export to data01", None, QtGui.QApplication.UnicodeUTF8))
         self.chkGenForGame.setChecked(True)
         self.chkGenForGame.setObjectName(_fromUtf8("chkGenForGame"))
         self.verticalLayout_2.addWidget(self.chkGenForGame)
         self.chkGenForEditor = QtGui.QCheckBox(self.groupBox)
+        self.chkGenForEditor.setText(QtGui.QApplication.translate("FontGenerator", "Export to editor GFX dir", None, QtGui.QApplication.UnicodeUTF8))
         self.chkGenForEditor.setChecked(True)
         self.chkGenForEditor.setObjectName(_fromUtf8("chkGenForEditor"))
         self.verticalLayout_2.addWidget(self.chkGenForEditor)
@@ -116,25 +124,30 @@ class Ui_FontGenerator(object):
         self.verticalLayout_3 = QtGui.QVBoxLayout()
         self.verticalLayout_3.setObjectName(_fromUtf8("verticalLayout_3"))
         self.rdoGenFont1 = QtGui.QRadioButton(self.groupBox)
+        self.rdoGenFont1.setText(QtGui.QApplication.translate("FontGenerator", "Font 01 (regular text)", None, QtGui.QApplication.UnicodeUTF8))
         self.rdoGenFont1.setChecked(True)
         self.rdoGenFont1.setObjectName(_fromUtf8("rdoGenFont1"))
         self.verticalLayout_3.addWidget(self.rdoGenFont1)
         self.rdoGenFont2 = QtGui.QRadioButton(self.groupBox)
+        self.rdoGenFont2.setText(QtGui.QApplication.translate("FontGenerator", "Font 02 (Class Trial minigame text)", None, QtGui.QApplication.UnicodeUTF8))
         self.rdoGenFont2.setChecked(False)
         self.rdoGenFont2.setObjectName(_fromUtf8("rdoGenFont2"))
         self.verticalLayout_3.addWidget(self.rdoGenFont2)
         self.horizontalLayout_3.addLayout(self.verticalLayout_3)
         self.groupBox_2 = QtGui.QGroupBox(self.groupBox)
+        self.groupBox_2.setTitle(QtGui.QApplication.translate("FontGenerator", "Tab Priority", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox_2.setAlignment(QtCore.Qt.AlignCenter)
         self.groupBox_2.setObjectName(_fromUtf8("groupBox_2"))
         self.horizontalLayout_6 = QtGui.QHBoxLayout(self.groupBox_2)
         self.horizontalLayout_6.setContentsMargins(-1, 4, -1, 8)
         self.horizontalLayout_6.setObjectName(_fromUtf8("horizontalLayout_6"))
         self.rdoLeftToRight = QtGui.QRadioButton(self.groupBox_2)
+        self.rdoLeftToRight.setText(QtGui.QApplication.translate("FontGenerator", "Left to right", None, QtGui.QApplication.UnicodeUTF8))
         self.rdoLeftToRight.setChecked(True)
         self.rdoLeftToRight.setObjectName(_fromUtf8("rdoLeftToRight"))
         self.horizontalLayout_6.addWidget(self.rdoLeftToRight)
         self.rdoRightToLeft = QtGui.QRadioButton(self.groupBox_2)
+        self.rdoRightToLeft.setText(QtGui.QApplication.translate("FontGenerator", "Right to left", None, QtGui.QApplication.UnicodeUTF8))
         self.rdoRightToLeft.setObjectName(_fromUtf8("rdoRightToLeft"))
         self.horizontalLayout_6.addWidget(self.rdoRightToLeft)
         self.horizontalLayout_3.addWidget(self.groupBox_2)
@@ -146,6 +159,7 @@ class Ui_FontGenerator(object):
         spacerItem3 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout_4.addItem(spacerItem3)
         self.btnClose = QtGui.QPushButton(FontGenerator)
+        self.btnClose.setText(QtGui.QApplication.translate("FontGenerator", "Close", None, QtGui.QApplication.UnicodeUTF8))
         self.btnClose.setAutoDefault(False)
         self.btnClose.setObjectName(_fromUtf8("btnClose"))
         self.horizontalLayout_4.addWidget(self.btnClose)
@@ -184,27 +198,6 @@ class Ui_FontGenerator(object):
         FontGenerator.setTabOrder(self.btnGenerateFont, self.btnClose)
 
     def retranslateUi(self, FontGenerator):
-        FontGenerator.setWindowTitle(_translate("FontGenerator", "Font Generator - untitled[*]", None))
-        self.btnNew.setText(_translate("FontGenerator", "&New", None))
-        self.btnNew.setShortcut(_translate("FontGenerator", "Ctrl+N", None))
-        self.btnSave.setText(_translate("FontGenerator", "&Save", None))
-        self.btnSave.setShortcut(_translate("FontGenerator", "Ctrl+S", None))
-        self.btnSaveAs.setText(_translate("FontGenerator", "Save As...", None))
-        self.btnSaveAs.setShortcut(_translate("FontGenerator", "Ctrl+Shift+S", None))
-        self.btnLoad.setText(_translate("FontGenerator", "&Open", None))
-        self.btnLoad.setShortcut(_translate("FontGenerator", "Ctrl+O", None))
-        self.btnGenerateFont.setText(_translate("FontGenerator", "&Generate", None))
-        self.btnGenerateFont.setShortcut(_translate("FontGenerator", "Ctrl+G", None))
-        self.btnNewTab.setText(_translate("FontGenerator", "Add Tab", None))
-        self.btnRemoveTab.setText(_translate("FontGenerator", "Remove", None))
-        self.groupBox.setTitle(_translate("FontGenerator", "Export", None))
-        self.chkGenForGame.setText(_translate("FontGenerator", "Export to data01", None))
-        self.chkGenForEditor.setText(_translate("FontGenerator", "Export to editor GFX dir", None))
-        self.rdoGenFont1.setText(_translate("FontGenerator", "Font 01 (regular text)", None))
-        self.rdoGenFont2.setText(_translate("FontGenerator", "Font 02 (Class Trial minigame text)", None))
-        self.groupBox_2.setTitle(_translate("FontGenerator", "Tab Priority", None))
-        self.rdoLeftToRight.setText(_translate("FontGenerator", "Left to right", None))
-        self.rdoRightToLeft.setText(_translate("FontGenerator", "Right to left", None))
-        self.btnClose.setText(_translate("FontGenerator", "Close", None))
+        pass
 
 import icons_rc

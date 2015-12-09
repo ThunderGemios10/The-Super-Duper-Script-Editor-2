@@ -2,7 +2,8 @@
 
 # Form implementation generated from reading ui file 'qt\ui\diffs.ui'
 #
-# Created by: PyQt4 UI code generator 4.11.4
+# Created: Tue Jul 16 17:26:47 2013
+#      by: PyQt4 UI code generator 4.8.5
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -11,21 +12,13 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    def _fromUtf8(s):
-        return s
-
-try:
-    _encoding = QtGui.QApplication.UnicodeUTF8
-    def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig, _encoding)
-except AttributeError:
-    def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig)
+    _fromUtf8 = lambda s: s
 
 class Ui_Diffs(object):
     def setupUi(self, Diffs):
         Diffs.setObjectName(_fromUtf8("Diffs"))
         Diffs.resize(1078, 389)
+        Diffs.setWindowTitle(QtGui.QApplication.translate("Diffs", "Diffs", None, QtGui.QApplication.UnicodeUTF8))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/monokuma-green.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Diffs.setWindowIcon(icon)
@@ -41,12 +34,14 @@ class Ui_Diffs(object):
         self.gridLayout = QtGui.QGridLayout()
         self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
         self.chkNotBoth = QtGui.QCheckBox(Diffs)
+        self.chkNotBoth.setText(QtGui.QApplication.translate("Diffs", "Show Files Not in Both Dirs", None, QtGui.QApplication.UnicodeUTF8))
         self.chkNotBoth.setObjectName(_fromUtf8("chkNotBoth"))
         self.gridLayout.addWidget(self.chkNotBoth, 1, 1, 1, 1)
         self.chkShowSame = QtGui.QCheckBox(Diffs)
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Meiryo UI"))
         self.chkShowSame.setFont(font)
+        self.chkShowSame.setText(QtGui.QApplication.translate("Diffs", "Show Identical Files", None, QtGui.QApplication.UnicodeUTF8))
         self.chkShowSame.setObjectName(_fromUtf8("chkShowSame"))
         self.gridLayout.addWidget(self.chkShowSame, 1, 0, 1, 1)
         self.horizontalLayout.addLayout(self.gridLayout)
@@ -62,6 +57,7 @@ class Ui_Diffs(object):
         self.treeResults.setContextMenuPolicy(QtCore.Qt.ActionsContextMenu)
         self.treeResults.setIndentation(15)
         self.treeResults.setObjectName(_fromUtf8("treeResults"))
+        self.treeResults.headerItem().setText(0, QtGui.QApplication.translate("Diffs", "Results (0)", None, QtGui.QApplication.UnicodeUTF8))
         self.verticalLayout.addWidget(self.treeResults)
         self.horizontalLayout_2.addLayout(self.verticalLayout)
         self.verticalLayout_4 = QtGui.QVBoxLayout()
@@ -71,6 +67,7 @@ class Ui_Diffs(object):
         font.setFamily(_fromUtf8("Meiryo UI"))
         font.setPointSize(10)
         self.lblDir1.setFont(font)
+        self.lblDir1.setText(QtGui.QApplication.translate("Diffs", "DIR 1", None, QtGui.QApplication.UnicodeUTF8))
         self.lblDir1.setObjectName(_fromUtf8("lblDir1"))
         self.verticalLayout_4.addWidget(self.lblDir1)
         self.label = QtGui.QLabel(Diffs)
@@ -78,6 +75,7 @@ class Ui_Diffs(object):
         font.setFamily(_fromUtf8("Meiryo UI"))
         font.setPointSize(9)
         self.label.setFont(font)
+        self.label.setText(QtGui.QApplication.translate("Diffs", "Translated", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setObjectName(_fromUtf8("label"))
         self.verticalLayout_4.addWidget(self.label)
         self.txtTranslated1 = QtGui.QPlainTextEdit(Diffs)
@@ -97,6 +95,7 @@ class Ui_Diffs(object):
         font.setFamily(_fromUtf8("Meiryo UI"))
         font.setPointSize(9)
         self.label_2.setFont(font)
+        self.label_2.setText(QtGui.QApplication.translate("Diffs", "Original", None, QtGui.QApplication.UnicodeUTF8))
         self.label_2.setObjectName(_fromUtf8("label_2"))
         self.verticalLayout_4.addWidget(self.label_2)
         self.txtOriginal1 = QtGui.QPlainTextEdit(Diffs)
@@ -116,6 +115,7 @@ class Ui_Diffs(object):
         font.setFamily(_fromUtf8("Meiryo UI"))
         font.setPointSize(9)
         self.label_3.setFont(font)
+        self.label_3.setText(QtGui.QApplication.translate("Diffs", "Comments", None, QtGui.QApplication.UnicodeUTF8))
         self.label_3.setObjectName(_fromUtf8("label_3"))
         self.verticalLayout_4.addWidget(self.label_3)
         self.txtComments1 = QtGui.QPlainTextEdit(Diffs)
@@ -138,6 +138,7 @@ class Ui_Diffs(object):
         font.setFamily(_fromUtf8("Meiryo UI"))
         font.setPointSize(10)
         self.lblDir2.setFont(font)
+        self.lblDir2.setText(QtGui.QApplication.translate("Diffs", "DIR 2", None, QtGui.QApplication.UnicodeUTF8))
         self.lblDir2.setObjectName(_fromUtf8("lblDir2"))
         self.verticalLayout_2.addWidget(self.lblDir2)
         self.label_14 = QtGui.QLabel(Diffs)
@@ -145,6 +146,7 @@ class Ui_Diffs(object):
         font.setFamily(_fromUtf8("Meiryo UI"))
         font.setPointSize(9)
         self.label_14.setFont(font)
+        self.label_14.setText(QtGui.QApplication.translate("Diffs", "Translated", None, QtGui.QApplication.UnicodeUTF8))
         self.label_14.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft)
         self.label_14.setObjectName(_fromUtf8("label_14"))
         self.verticalLayout_2.addWidget(self.label_14)
@@ -172,6 +174,7 @@ class Ui_Diffs(object):
         font.setFamily(_fromUtf8("Meiryo UI"))
         font.setPointSize(9)
         self.label_15.setFont(font)
+        self.label_15.setText(QtGui.QApplication.translate("Diffs", "Original", None, QtGui.QApplication.UnicodeUTF8))
         self.label_15.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft)
         self.label_15.setObjectName(_fromUtf8("label_15"))
         self.verticalLayout_2.addWidget(self.label_15)
@@ -199,6 +202,7 @@ class Ui_Diffs(object):
         font.setFamily(_fromUtf8("Meiryo UI"))
         font.setPointSize(9)
         self.label_16.setFont(font)
+        self.label_16.setText(QtGui.QApplication.translate("Diffs", "Comments", None, QtGui.QApplication.UnicodeUTF8))
         self.label_16.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft)
         self.label_16.setObjectName(_fromUtf8("label_16"))
         self.verticalLayout_2.addWidget(self.label_16)
@@ -243,17 +247,6 @@ class Ui_Diffs(object):
         Diffs.setTabOrder(self.txtComments2, self.buttonBox)
 
     def retranslateUi(self, Diffs):
-        Diffs.setWindowTitle(_translate("Diffs", "Diffs", None))
-        self.chkNotBoth.setText(_translate("Diffs", "Show Files Not in Both Dirs", None))
-        self.chkShowSame.setText(_translate("Diffs", "Show Identical Files", None))
-        self.treeResults.headerItem().setText(0, _translate("Diffs", "Results (0)", None))
-        self.lblDir1.setText(_translate("Diffs", "DIR 1", None))
-        self.label.setText(_translate("Diffs", "Translated", None))
-        self.label_2.setText(_translate("Diffs", "Original", None))
-        self.label_3.setText(_translate("Diffs", "Comments", None))
-        self.lblDir2.setText(_translate("Diffs", "DIR 2", None))
-        self.label_14.setText(_translate("Diffs", "Translated", None))
-        self.label_15.setText(_translate("Diffs", "Original", None))
-        self.label_16.setText(_translate("Diffs", "Comments", None))
+        pass
 
 import icons_rc

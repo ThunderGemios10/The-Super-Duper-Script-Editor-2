@@ -3,7 +3,7 @@
 ### 
 ### This file is part of the Super Duper Script Editor.
 ### 
-### The Super Duper Script Editor 2 is free software: you can redistribute it
+### The Super Duper Script Editor is free software: you can redistribute it
 ### and/or modify it under the terms of the GNU General Public License as
 ### published by the Free Software Foundation, either version 3 of the License,
 ### or (at your option) any later version.
@@ -209,6 +209,7 @@ class SetupWizard(QtGui.QDialog):
   def setup_workspace(self):
     data00  = os.path.join(self.iso_dir, DATA00_CPK)
     data01  = os.path.join(self.iso_dir, DATA01_CPK)
+    voice   = os.path.join(self.iso_dir, VOICE_PAK)
     
     self.generate_directories()
     
@@ -406,9 +407,9 @@ class SetupWizard(QtGui.QDialog):
     
     progress.setValue(1)
     # And convert to PNG with an alpha channel so our editor can use it.
-    font1 = font_bmp_to_alpha(os.path.join(self.data01_dir, "jp" "font" "font.pak", "0000.bmp"))
+    font1 = font_bmp_to_alpha(os.path.join(self.data01_dir, "font.pak", "0000.bmp"))
     progress.setValue(2)
-    font2 = font_bmp_to_alpha(os.path.join(self.data01_dir, "jp" "font" "font.pak", "0002.bmp"))
+    font2 = font_bmp_to_alpha(os.path.join(self.data01_dir, "font.pak", "0002.bmp"))
     progress.setValue(3)
     
     font1.save(os.path.join(font_dir, "Font01.png"))
