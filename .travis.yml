@@ -1,7 +1,0 @@
-language: python
-python:
-  - "2.7"
-# command to install dependencies
-install: pip install PyQt4, PyEnchant
-# command to run tests
-script: nosetests
