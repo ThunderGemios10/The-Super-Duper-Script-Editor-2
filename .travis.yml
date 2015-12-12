@@ -2,6 +2,6 @@ language: python
 python:
   - "2.7"
 # command to install dependencies
-install: "PyQt4, PyEnchant"
+install: pip install --user -r PyQt4, PyEnchant
 # command to run tests
 script: nosetests
