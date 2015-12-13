@@ -1,6 +1,6 @@
 # The Super Duper Script Editor 2
 
-A broken script editor for _Super Danganronpa 2: So Long, Despair Academy_.
+A script editor for _Super Danganronpa 2: So Long, Despair Academy_.
 
 ## DISCLAIMER
 
