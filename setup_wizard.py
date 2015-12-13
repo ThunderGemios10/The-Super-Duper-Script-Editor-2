@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ### Copyright © 2012-2013 BlackDragonHunt
 ### 
 ### This file is part of the Super Duper Script Editor.
@@ -56,7 +56,6 @@ EDITED_ISO_FILE = "[PSP] SDR2 [Edited].iso"
 
 EDITOR_DATA_DIR = "!editor"
 DUPES_CSV       = "dupes.csv"
-EBOOT_TEXT      = "eboot_text.csv"
 SIMILARITY_DB   = "similarity-db.sql"
 
 THREAD_TIMEOUT = 0.1
@@ -340,20 +339,11 @@ class SetupWizard(QtGui.QDialog):
     progress.setValue(0)
     
     # Extract the images we can't just take directly from the game's data.
-    gfx_bin = zipfile.ZipFile("data/gfx_base.bin", "r")
+    gfx_bin = zipfile.ZipFile("data/gfx_base.zip", "r")
     progress.setValue(1)
-    gfx_enc = gfx_bin.open("gfx_base.bin")
     progress.setValue(2)
-    gfx_dec = cStringIO.StringIO()
-    base64.decode(gfx_enc, gfx_dec)
-    progress.setValue(3)
-    gfx_base = zipfile.ZipFile(gfx_dec, "r")
-    progress.setValue(4)
-    gfx_base.extractall(gfx_dir)
+    gfx_bin.extractall(gfx_dir)
     progress.setValue(5)
-    gfx_base.close()
-    gfx_dec.close()
-    gfx_enc.close()
     gfx_bin.close()
     
     # We can mostly loop this.
@@ -364,6 +354,8 @@ class SetupWizard(QtGui.QDialog):
       ("events",    "gallery_icn_???.gim"),
       ("movies",    "bin_movie_gallery_l.pak/0000/000[1789].gim"),
       ("movies",    "bin_movie_gallery_l.pak/0000/00[123]?.gim"),
+      ("movies",    "gallery_ico_m_none.gim"),
+      ("movies",    "gallery_thumbnail_m_???.gim"),
       ("nametags",  "tex_system.pak/00[12]?.gim"),
       ("nametags",  "tex_system.pak/003[0123456].gim"),
       ("presents",  "present_icn_???.gim"),
@@ -406,15 +398,15 @@ class SetupWizard(QtGui.QDialog):
     
     progress.setValue(1)
     # And convert to PNG with an alpha channel so our editor can use it.
-    font1 = font_bmp_to_alpha(os.path.join(self.data01_dir, "font.pak", "0000.bmp"))
+    font1 = font_bmp_to_alpha(os.path.join(self.data01_dir, "jp", "font", "font.pak", "0000.bmp"))
     progress.setValue(2)
-    font2 = font_bmp_to_alpha(os.path.join(self.data01_dir, "font.pak", "0002.bmp"))
+    font2 = font_bmp_to_alpha(os.path.join(self.data01_dir, "jp", "font", "font.pak", "0002.bmp"))
     progress.setValue(3)
     
     font1.save(os.path.join(font_dir, "Font01.png"))
     font2.save(os.path.join(font_dir, "Font02.png"))
-    shutil.copy(os.path.join(self.data01_dir, "font.pak", "0001.font"), os.path.join(font_dir, "Font01.font"))
-    shutil.copy(os.path.join(self.data01_dir, "font.pak", "0003.font"), os.path.join(font_dir, "Font02.font"))
+    shutil.copy(os.path.join(self.data01_dir, "jp", "font", "font.pak", "0001.font"), os.path.join(font_dir, "Font01.font"))
+    shutil.copy(os.path.join(self.data01_dir, "jp", "font", "font.pak", "0003.font"), os.path.join(font_dir, "Font02.font"))
     
     progress.setValue(4)
     
@@ -422,9 +414,13 @@ class SetupWizard(QtGui.QDialog):
     flash_dir = os.path.join(gfx_dir, "flash")
     if not os.path.isdir(flash_dir):
       os.makedirs(flash_dir)
+
+    flash2_dir = os.path.join(gfx_dir, "flash2")
+    if not os.path.isdir(flash2_dir):
+      os.makedirs(flash2_dir)
     
-    # Because there's so many in so many different places, I just stored a list
-    # of the flash files we need in the gfx_base archive. So let's load that.
+     #Because there's so many in so many different places, I just stored a list
+     #of the flash files we need in the gfx_base archive. So let's load that.
     with open(os.path.join(gfx_dir, "fla.txt"), "rb") as fla:
       fla_list = fla.readlines()
       
@@ -442,8 +438,32 @@ class SetupWizard(QtGui.QDialog):
         flash = flash.strip()
         fla_name = flash[:7] # fla_###
         
-        src  = os.path.join(self.data01_dir, flash)
+        src  = os.path.join(self.data01_dir, "all", "flash", flash)
         dest = os.path.join(flash_dir, "%s.gim" % fla_name)
+
+        shutil.copy(src, dest)
+        
+        # Because there's so many in so many different places, I just stored a list
+    # of the flash files we need in the gfx_base archive. So let's load that.
+    with open(os.path.join(gfx_dir, "fla2.txt"), "rb") as fla:
+      fla_list = fla.readlines()
+      
+      progress.setLabelText("Copying flash2.")
+      progress.setMaximum(len(fla_list))
+      progress.setValue(0)
+      
+      for i, flash in enumerate(fla_list):
+        if i % 10 == 0:
+          progress.setValue(i)
+        
+        if progress.wasCanceled():
+          return
+        
+        flash = flash.strip()
+        fla_name = flash[:7] # fla_###
+        
+        src2  = os.path.join(self.data01_dir, "jp", "flash", flash)
+        dest = os.path.join(flash2_dir, "%s.gim" % fla_name)
         
         shutil.copy(src, dest)
         
@@ -454,7 +474,7 @@ class SetupWizard(QtGui.QDialog):
     progress.setLabelText("Renaming files.")
     to_rename = [
       ("movies",    "movie_%03d.gim", range(32)),
-      ("nametags",  "%02d.gim", range(23) + [24, 25, 30, 31]),
+      ("nametags", "%02d.gim", range(23) + [24, 25, 30, 31]),
     ]
     
     for (folder, pattern, nums) in to_rename:
@@ -574,7 +594,6 @@ class SetupWizard(QtGui.QDialog):
     cfg.backup_dir    = self.backup_dir
     cfg.changes_dir   = self.changes_dir
     cfg.dupes_csv     = os.path.join(self.editor_data_dir, DUPES_CSV)
-    cfg.eboot_text    = os.path.join(self.editor_data_dir, EBOOT_TEXT)
     cfg.gfx_dir       = self.gfx_dir
     cfg.iso_dir       = self.edited_iso_dir
     cfg.iso_file      = os.path.join(self.workspace_dir, EDITED_ISO_FILE)
