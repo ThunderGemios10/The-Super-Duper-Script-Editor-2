@@ -4,7 +4,7 @@ A script editor for _Super Danganronpa 2: So Long, Despair Academy_.
 
 ## DISCLAIMER
 
-**This code is broken, incomplete, and will not be of any use to the average user. It is _only_ provided for educational purposes, as a way to document the research we did on SDR2 before the translation project was canceled. This code is provided _completely unsupported_, and with no guarantees it will operate correctly.**
+**This code is incomplete, and will not be of any use to the average user. It is _only_ provided for educational purposes, as a way to document the research we did on SDR2 before the translation project was canceled. This code is provided _completely unsupported_, and with no guarantees it will operate correctly.**
 
 If you want to set up a workspace, check out the code in `extract/cpk.py`. If someone wants to take the reins on this and finish it up, you're more than welcome to fork the repo and have at it.
 
