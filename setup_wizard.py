@@ -416,9 +416,9 @@ class SetupWizard(QtGui.QDialog):
     if not os.path.isdir(flash_dir):
       os.makedirs(flash_dir)
 
-    flash2_dir = os.path.join(gfx_dir, "flash2")
-    if not os.path.isdir(flash2_dir):
-      os.makedirs(flash2_dir)
+    #flash2_dir = os.path.join(gfx_dir, "flash2")
+    #if not os.path.isdir(flash2_dir):
+      #os.makedirs(flash2_dir)
     
      #Because there's so many in so many different places, I just stored a list
      #of the flash files we need in the gfx_base archive. So let's load that.
@@ -446,27 +446,27 @@ class SetupWizard(QtGui.QDialog):
         
         # Because there's so many in so many different places, I just stored a list
     # of the flash files we need in the gfx_base archive. So let's load that.
-    with open(os.path.join(gfx_dir, "fla2.txt"), "rb") as fla:
-      fla_list = fla.readlines()
+    #with open(os.path.join(gfx_dir, "fla2.txt"), "rb") as fla:
+      #fla_list = fla.readlines()
       
-      progress.setLabelText("Copying flash2.")
-      progress.setMaximum(len(fla_list))
-      progress.setValue(0)
+     # progress.setLabelText("Copying flash2.")
+     # progress.setMaximum(len(fla_list))
+     # progress.setValue(0)
       
-      for i, flash in enumerate(fla_list):
-        if i % 10 == 0:
-          progress.setValue(i)
+     # for i, flash in enumerate(fla_list):
+     #   if i % 10 == 0:
+     #     progress.setValue(i)
         
-        if progress.wasCanceled():
+      #  if progress.wasCanceled():
           return
         
-        flash = flash.strip()
-        fla_name = flash[:7] # fla_###
+       # flash = flash.strip()
+      #  fla_name = flash[:7] # fla_###
         
-        src2  = os.path.join(self.data01_dir, "jp", "flash", flash)
-        dest = os.path.join(flash2_dir, "%s.gim" % fla_name)
+        #src2  = os.path.join(self.data01_dir, "jp", "flash", flash)
+      #  dest = os.path.join(flash2_dir, "%s.gim" % fla_name)
         
-        shutil.copy(src, dest)
+       # shutil.copy(src, dest)
         
       progress.setValue(len(fla_list))
     
