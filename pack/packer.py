@@ -118,17 +118,17 @@ class CpkPacker():
     # So we can loop. :)
     ARCHIVE_INFO = [
       {
-        "dir":  common.editor_config.data00_dir,
-        "cpk":  os.path.join(USRDIR, "data00.cpk"),
-        "csv":  os.path.join("data", "data00.csv" if not common.editor_config.quick_build else "data00-quick.csv"),
-        "name": "data00.cpk",
-        "pack": common.editor_config.pack_data00,
-      },
-      {
         "dir":  common.editor_config.data01_dir,
         "cpk":  os.path.join(USRDIR, "data01.cpk"),
         "csv":  os.path.join("data", "data01.csv" if not common.editor_config.quick_build else "data01-quick.csv"),
         "name": "data01.cpk",
+        "pack": common.editor_config.pack_data00,
+      },
+      {
+        "dir":  common.editor_config.data00_dir,
+        "cpk":  os.path.join(USRDIR, "data00.cpk"),
+        "csv":  os.path.join("data", "data00.csv" if not common.editor_config.quick_build else "data00-quick.csv"),
+        "name": "data00.cpk",
         "pack": common.editor_config.pack_data01,
       },
     ]
