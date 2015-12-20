@@ -205,10 +205,10 @@ if __name__ == "__main__":
   # import sys
   # app = QtGui.QApplication(sys.argv)
   
-  # packer = DatPacker()
+  packer = DatPacker()
   
   #start = time.time()
-  # packer.create_archives()
+  packer.create_archives()
   #print "Took %s seconds to create the archives." % (time.time() - start)
 
 ### EOF ###
