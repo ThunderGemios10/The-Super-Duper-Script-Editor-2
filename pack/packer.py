@@ -32,6 +32,7 @@ import os
 import re
 import shutil
 import tempfile
+from PyQt4.QtGui import QApplication
 
 import common
 import eboot_patch
@@ -52,7 +53,7 @@ class CpkPacker():
   def __pack_cpk(self, csv, cpk):
     
     self.progress.setValue(0)
-    self.progress.setMaximum(100000)
+    self.progress.setMaximum(1000)
     self.progress.setLabelText("Building %s" % cpk)
     
     process = QProcess()
@@ -106,7 +107,7 @@ class CpkPacker():
     self.progress.setWindowModality(Qt.Qt.WindowModal)
     self.progress.setValue(0)
     self.progress.setAutoClose(False)
-    self.progress.setMinimumDuration(1)
+    self.progress.setMinimumDuration(0)
     
     USRDIR     = os.path.join(common.editor_config.iso_dir, "PSP_GAME", "USRDIR")
     eboot_path = os.path.join(common.editor_config.iso_dir, "PSP_GAME", "SYSDIR", "EBOOT.BIN")
@@ -117,17 +118,17 @@ class CpkPacker():
     # So we can loop. :)
     ARCHIVE_INFO = [
       {
-        "dir":  common.editor_config.data01_dir,
-        "cpk":  os.path.join(USRDIR, "data01.cpk"),
-        "csv":  os.path.join("data", "data01.csv" if not common.editor_config.quick_build else "data01-quick.csv"),
-        "name": "data01.cpk",
-        "pack": common.editor_config.pack_data00,
-      },
-      {
         "dir":  common.editor_config.data00_dir,
         "cpk":  os.path.join(USRDIR, "data00.cpk"),
         "csv":  os.path.join("data", "data00.csv" if not common.editor_config.quick_build else "data00-quick.csv"),
         "name": "data00.cpk",
+        "pack": common.editor_config.pack_data00,
+      },
+      {
+        "dir":  common.editor_config.data01_dir,
+        "cpk":  os.path.join(USRDIR, "data01.cpk"),
+        "csv":  os.path.join("data", "data01.csv" if not common.editor_config.quick_build else "data01-quick.csv"),
+        "name": "data01.cpk",
         "pack": common.editor_config.pack_data01,
       },
     ]
@@ -177,7 +178,7 @@ class CpkPacker():
             del data
             
         elif os.path.isfile(real_path):
-          # If it's a file, though, we can just use it directly.
+        # If it's a file, though, we can just use it directly.
           out_path = real_path
           
         row[0] = out_path
@@ -198,13 +199,14 @@ class CpkPacker():
     # self.progress.setLabelText("Deleting temporary files...")
     # shutil.rmtree(temp_dir)
     self.progress.close()
+    
 
 if __name__ == "__main__":
   pass
   # import sys
   # app = QtGui.QApplication(sys.argv)
   
-  packer = DatPacker()
+  packer = CpkPacker()
   
   #start = time.time()
   packer.create_archives()
