@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ### Copyright © 2012-2013 BlackDragonHunt
 ### 
 ### This file is part of the Super Duper Script Editor.
@@ -34,7 +34,6 @@ import shutil
 import tempfile
 
 import common
-import eboot_text
 import eboot_patch
 
 from .pak import pack_dir
@@ -107,7 +106,7 @@ class CpkPacker():
     self.progress.setWindowModality(Qt.Qt.WindowModal)
     self.progress.setValue(0)
     self.progress.setAutoClose(False)
-    self.progress.setMinimumDuration(0)
+    self.progress.setMinimumDuration(1)
     
     USRDIR     = os.path.join(common.editor_config.iso_dir, "PSP_GAME", "USRDIR")
     eboot_path = os.path.join(common.editor_config.iso_dir, "PSP_GAME", "SYSDIR", "EBOOT.BIN")
