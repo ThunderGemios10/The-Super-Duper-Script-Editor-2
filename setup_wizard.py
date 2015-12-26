@@ -209,6 +209,7 @@ class SetupWizard(QtGui.QDialog):
   def setup_workspace(self):
     data00  = os.path.join(self.iso_dir, DATA00_CPK)
     data01  = os.path.join(self.iso_dir, DATA01_CPK)
+    voice   = os.path.join(self.iso_dir, VOICE_AWB)
     
     self.generate_directories()
     
