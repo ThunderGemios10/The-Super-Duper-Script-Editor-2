@@ -195,10 +195,38 @@ class CpkPacker():
     
     with open(eboot_path, "wb") as f:
       eboot.tofile(f)
+      
+    # Text replacement
+    to_replace = eboot_text.get_eboot_text()
+    for replacement in to_replace:
+    
+      orig = bytearray(replacement.orig, encoding = replacement.enc)
+      
+      # If they left something blank, write the original text back.
+      if len(replacement.text) == 0:
+        data = orig
+      else:
+        data = bytearray(replacement.text, encoding = replacement.enc)
+      
+      pos  = replacement.pos.int + eboot_offset
+      
+      padding = len(orig) - len(data)
+      if padding > 0:
+        # Null bytes to fill the rest of the space the original took.
+        data.extend(bytearray(padding))
+      
+      data = ConstBitStream(bytes = data)
+      eboot.overwrite(data, pos * 8)
+    
+    eboot_out = os.path.join(common.editor_config.iso_dir, "PSP_GAME", "SYSDIR", "EBOOT.BIN")
+    
+    with open(eboot_out, "wb") as f:
+      eboot.tofile(f)
+    
+    self.progress.close()
     
     # self.progress.setLabelText("Deleting temporary files...")
     # shutil.rmtree(temp_dir)
-    self.progress.close()
     
 
 if __name__ == "__main__":
