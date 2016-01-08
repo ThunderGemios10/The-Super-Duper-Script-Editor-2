@@ -143,6 +143,25 @@ class CpkPacker():
       
       self.progress.setWindowTitle("Building " + archive["name"])
       
+      toc_info = {}
+      file_list = None
+      
+      if archive["toc"]:
+        file_list = []
+        
+        toc = get_toc(eboot, archive["toc"])
+        
+        for entry in toc:
+          filename  = entry["filename"]
+          pos_pos   = entry["file_pos_pos"]
+          len_pos   = entry["file_len_pos"]
+          
+          toc_info[filename] = [pos_pos, len_pos]
+          file_list.append(filename)
+      
+      # Causes memory issues if I use the original order, for whatever reason.
+      file_list = None
+      
       csv_template_f  = open(archive["csv"], "rb")
       csv_template    = csv.reader(csv_template_f)
       
@@ -188,6 +207,25 @@ class CpkPacker():
       csv_out_f.close()
       
       self.__pack_cpk(csv_out_path, archive["cpk"])
+      
+      # We're playing fast and loose with the file count anyway, so why not?
+      self.file_count += 1
+      self.progress.setValue(self.file_count)
+      self.progress.setLabelText("Saving " + archive["name"] + "...")
+      
+      if archive["toc"]:
+        for entry in table_of_contents:
+          if not entry in toc_info:
+            _LOGGER.warning("%s missing from %s table of contents." % (entry, archive["name"]))
+            continue
+          
+          file_pos  = table_of_contents[entry]["pos"]
+          file_size = table_of_contents[entry]["size"]
+          
+          eboot.overwrite(BitStream(uintle = file_pos, length = 32),  toc_info[entry][0] * 8)
+          eboot.overwrite(BitStream(uintle = file_size, length = 32), toc_info[entry][1] * 8)
+      
+      del table_of_contents
     
     self.progress.setWindowTitle("Building...")
     self.progress.setLabelText("Saving EBOOT.BIN...")
