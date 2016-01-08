@@ -445,22 +445,6 @@ class SetupWizard(QtGui.QDialog):
 
         shutil.copy(src, dest)
         
-        # Because there's so many in so many different places, I just stored a list
-    # of the flash files we need in the gfx_base archive. So let's load that.
-    #with open(os.path.join(gfx_dir, "fla2.txt"), "rb") as fla:
-      #fla_list = fla.readlines()
-      
-     # progress.setLabelText("Copying flash2.")
-     # progress.setMaximum(len(fla_list))
-     # progress.setValue(0)
-      
-     # for i, flash in enumerate(fla_list):
-     #   if i % 10 == 0:
-     #     progress.setValue(i)
-        
-      #  if progress.wasCanceled():
-          return
-        
        # flash = flash.strip()
       #  fla_name = flash[:7] # fla_###
         
