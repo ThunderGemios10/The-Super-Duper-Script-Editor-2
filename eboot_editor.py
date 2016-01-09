@@ -23,7 +23,6 @@ from PyQt4.QtGui import QTextCursor
 from ui.eboot import Ui_EbootEditor
 
 import common
-import eboot_text
 
 class EbootEditor(QtGui.QDialog):
   def __init__(self, parent=None):
