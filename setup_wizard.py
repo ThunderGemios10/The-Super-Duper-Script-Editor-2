@@ -46,6 +46,7 @@ from gmo_file import GmoFile
 
 DATA00_CPK      = os.path.join("PSP_GAME", "USRDIR", "data00.cpk")
 DATA01_CPK      = os.path.join("PSP_GAME", "USRDIR", "data01.cpk")
+VOICE_AWB       = os.path.join("data00", "jp", "voice", "voice.awb")
 
 DATA00_DIR      = "data00"
 DATA01_DIR      = "data01"
@@ -209,7 +210,7 @@ class SetupWizard(QtGui.QDialog):
   def setup_workspace(self):
     data00  = os.path.join(self.iso_dir, DATA00_CPK)
     data01  = os.path.join(self.iso_dir, DATA01_CPK)
-    voice   = os.path.join(self.iso_dir, VOICE_AWB)
+    voice   = os.path.join(self.workspace_dir, VOICE_AWB)
     
     self.generate_directories()
     
@@ -444,14 +445,6 @@ class SetupWizard(QtGui.QDialog):
         dest = os.path.join(flash_dir, "%s.gim" % fla_name)
 
         shutil.copy(src, dest)
-        
-       # flash = flash.strip()
-      #  fla_name = flash[:7] # fla_###
-        
-        #src2  = os.path.join(self.data01_dir, "jp", "flash", flash)
-      #  dest = os.path.join(flash2_dir, "%s.gim" % fla_name)
-        
-       # shutil.copy(src, dest)
         
       progress.setValue(len(fla_list))
     
