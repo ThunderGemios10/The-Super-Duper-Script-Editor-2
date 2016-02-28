@@ -9,7 +9,7 @@ A script editor for _Super Danganronpa 2: So Long, Despair Academy_.
 If you want to set up a workspace, check out the code in `extract/cpk.py`. If someone wants to take the reins on this and finish it up, you're more than welcome to fork the repo and have at it.
 
 ## Canceled
-**I won't be continuing this anymore, since Danganronpa 2: Goodbye Despair is releasing in Steam soon. I won't have any need to continue working on this, However i will leave this live in GitHub for references.
+**I won't be continuing this anymore, since Danganronpa 2: Goodbye Despair is releasing in Steam soon. I won't have any need to continue working on this, However i will leave this live in GitHub for references.**
 
 ## Dependencies
 
