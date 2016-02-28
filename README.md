@@ -1,4 +1,4 @@
-# The Super Duper Script Editor 2
+# The Super Duper Script Editor 2 [CANCELLED]
 
 A script editor for _Super Danganronpa 2: So Long, Despair Academy_.
 
@@ -7,6 +7,9 @@ A script editor for _Super Danganronpa 2: So Long, Despair Academy_.
 **This code is incomplete, and will not be of any use to the average user. It is _only_ provided for educational purposes, as a way to document the research we did on SDR2 before the translation project was canceled. This code is provided _completely unsupported_, and with no guarantees it will operate correctly.**
 
 If you want to set up a workspace, check out the code in `extract/cpk.py`. If someone wants to take the reins on this and finish it up, you're more than welcome to fork the repo and have at it.
+
+## Canceled
+**I won't be continuing this anymore, since Danganronpa 2: Goodbye Despair is releasing in Steam soon. I won't have any need to continue working on this, However i will leave this live in GitHub for references.
 
 ## Dependencies
 
