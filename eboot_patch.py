@@ -23,7 +23,7 @@
 #from bitstring import array.array, BitStream
 from enum import Enum
 import array, os
-import Common
+import common
 import clt
 
 NAME     = "name"
