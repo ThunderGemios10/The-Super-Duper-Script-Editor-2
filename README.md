@@ -39,6 +39,10 @@ If you want to set up a workspace, check out the code in `extract/cpk.py`. If so
     * Used to quantize PNGs before converting them to GIM files.
     * A Windows binary is included in `tools`.
 
+# Note:
+   * You will need to download some required files to get this to work. Check "Releases", Download those files and place them in "data" folder.
+
+
 ## Licensing and legal stuff
 
 The Super Duper Script Editor 2 is released under the GNU GPL, Version 3. A list of attributions can be found under `Help` -> `About` from within the editor.
