@@ -35,7 +35,6 @@ import shutil
 import tempfile
 
 import common
-import eboot_text
 import eboot_patch
 
 from .pak import pack_dir
