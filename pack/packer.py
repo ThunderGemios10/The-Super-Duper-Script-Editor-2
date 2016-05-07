@@ -33,9 +33,9 @@ import os
 import re
 import shutil
 import tempfile
-from PyQt4.QtGui import QApplication
 
 import common
+import eboot_text
 import eboot_patch
 
 from .pak import pack_dir
@@ -54,7 +54,7 @@ class CpkPacker():
   def __pack_cpk(self, csv, cpk):
     
     self.progress.setValue(0)
-    self.progress.setMaximum(1000)
+    self.progress.setMaximum(100000)
     self.progress.setLabelText("Building %s" % cpk)
     
     process = QProcess()
@@ -144,25 +144,6 @@ class CpkPacker():
       
       self.progress.setWindowTitle("Building " + archive["name"])
       
-      toc_info = {}
-      file_list = None
-      
-      if archive["toc"]:
-        file_list = []
-        
-        toc = get_toc(eboot, archive["toc"])
-        
-        for entry in toc:
-          filename  = entry["filename"]
-          pos_pos   = entry["file_pos_pos"]
-          len_pos   = entry["file_len_pos"]
-          
-          toc_info[filename] = [pos_pos, len_pos]
-          file_list.append(filename)
-      
-      # Causes memory issues if I use the original order, for whatever reason.
-      file_list = None
-      
       csv_template_f  = open(archive["csv"], "rb")
       csv_template    = csv.reader(csv_template_f)
       
@@ -179,10 +160,8 @@ class CpkPacker():
         real_path = os.path.join(archive["dir"], base_path)
         out_path  = os.path.join(temp_dir, archive["name"], base_path)
         
-      self.file_count += 1
-      if self.file_count % 25 == 0:
-        self.progress.setLabelText("Reading...\n" + full_path)
-        self.progress.setValue(self.file_count)
+        self.progress.setValue(self.progress.value() + 1)
+        self.progress.setLabelText("Reading...\n%s" % real_path)
         
         # All items in the CPK list should be files.
         # Therefore, if we have a directory, then it needs to be packed.
@@ -200,7 +179,7 @@ class CpkPacker():
             del data
             
         elif os.path.isfile(real_path):
-        # If it's a file, though, we can just use it directly.
+          # If it's a file, though, we can just use it directly.
           out_path = real_path
           
         row[0] = out_path
@@ -210,243 +189,27 @@ class CpkPacker():
       csv_out_f.close()
       
       self.__pack_cpk(csv_out_path, archive["cpk"])
-      
-      # We're playing fast and loose with the file count anyway, so why not?
-      self.file_count += 1
-      self.progress.setValue(self.file_count)
-      self.progress.setLabelText("Saving " + archive["name"] + "...")
-      
-      if archive["toc"]:
-        for entry in table_of_contents:
-          if not entry in toc_info:
-            _LOGGER.warning("%s missing from %s table of contents." % (entry, archive["name"]))
-            continue
-          
-          file_pos  = table_of_contents[entry]["pos"]
-          file_size = table_of_contents[entry]["size"]
-          
-          eboot.overwrite(BitStream(uintle = file_pos, length = 32),  toc_info[entry][0] * 8)
-          eboot.overwrite(BitStream(uintle = file_size, length = 32), toc_info[entry][1] * 8)
-      
-      del table_of_contents
-
-  def pack_dir(self, dir, handler, file_list = None, align_toc = 16, align_files = 16, eof = False):
     
-    table_of_contents = {}
-    
-    if file_list == None:
-      file_list = sorted(os.listdir(dir))
-      
-    num_files    = len(file_list)
-    
-    toc_length = (num_files + 1) * 4
-    
-    if eof:
-      toc_length += 1
-    
-    if toc_length % align_toc > 0:
-      toc_length += align_toc - (toc_length % align_toc)
-    
-    handler.seek(0)
-    handler.write(struct.pack("<I", num_files))
-    handler.write(bytearray(toc_length - 4))
-    
-    for file_num, item in enumerate(file_list):
-      full_path = os.path.join(dir, item)
-    
-      if os.path.isfile(full_path):
-        
-        basename = os.path.basename(item)
-        basename, ext = os.path.splitext(basename)
-        
-        # Special handling for certain data types.
-        if ext == ".txt":
-          data = self.pack_txt(full_path)
-        
-        # anagram_81.dat is not a valid anagram file. <_>
-        elif basename[:8] == "anagram_" and ext == ".dat" and not basename == "anagram_81":
-          anagram = AnagramFile(full_path)
-          data    = anagram.pack(for_game = True).bytes
-        
-        else:
-          with open(full_path, "rb") as f:
-            data = f.read()
-      
-      else:
-      
-        temp_align_toc = 16
-        temp_align_files = 4
-        
-        if item in SPECIAL_ALIGN:
-          temp_align_toc = SPECIAL_ALIGN[item][0]
-          temp_align_files = SPECIAL_ALIGN[item][1]
-        elif os.path.basename(dir) in SPECIAL_ALIGN and len(SPECIAL_ALIGN[os.path.basename(dir)]) == 4:
-          temp_align_toc = SPECIAL_ALIGN[os.path.basename(dir)][2]
-          temp_align_files = SPECIAL_ALIGN[os.path.basename(dir)][3]
-        
-        if os.path.splitext(full_path)[1].lower() == ".lin":
-          data = self.pack_lin(full_path)
-        
-        else:
-          data = io.BytesIO()
-          with io.BufferedWriter(data) as fh:
-            self.pack_dir(full_path, fh, align_toc = temp_align_toc, align_files = temp_align_files, eof = eof)
-            fh.flush()
-            data = data.getvalue()
-      
-      data = bytearray(data)
-      file_size = len(data)
-      padding = 0
-      
-      if file_size % align_files > 0:
-        padding = align_files - (file_size % align_files)
-        data.extend(bytearray(padding))
-      
-      handler.seek(0, io.SEEK_END)
-      file_pos = handler.tell()
-      handler.write(data)
-      handler.seek((file_num + 1) * 4)
-      handler.write(struct.pack("<I", file_pos))
-      
-      del data
-      
     self.progress.setWindowTitle("Building...")
     self.progress.setLabelText("Saving EBOOT.BIN...")
     self.progress.setValue(self.progress.maximum())
-
-      
-    # Text replacement
-    to_replace = eboot_text.get_eboot_text()
-    for replacement in to_replace:
     
-      orig = bytearray(replacement.orig, encoding = replacement.enc)
-      
-      # If they left something blank, write the original text back.
-      if len(replacement.text) == 0:
-        data = orig
-      else:
-        data = bytearray(replacement.text, encoding = replacement.enc)
-      
-      pos  = replacement.pos.int + eboot_offset
-      
-      padding = len(orig) - len(data)
-      if padding > 0:
-        # Null bytes to fill the rest of the space the original took.
-        data.extend(bytearray(padding))
-      
-      data = ConstBitStream(bytes = data)
-      eboot.overwrite(data, pos * 8)
-    
-    eboot_out = os.path.join(common.editor_config.iso_dir, "PSP_GAME", "SYSDIR", "EBOOT.BIN")
-    
-    with open(eboot_out, "wb") as f:
+    with open(eboot_path, "wb") as f:
       eboot.tofile(f)
-    
-    self.progress.close()
     
     # self.progress.setLabelText("Deleting temporary files...")
     # shutil.rmtree(temp_dir)
-    
-        # Re-center the dialog.
-        progress_w = self.progress.geometry().width()
-        progress_h = self.progress.geometry().height()
-        
-        new_x = self.x + ((self.width - progress_w) / 2)
-        new_y = self.y + ((self.height - progress_h) / 2)
-        
-        self.progress.move(new_x, new_y)
-      
-      table_of_contents[item] = {}
-      table_of_contents[item]["size"] = file_size
-      table_of_contents[item]["pos"]  = file_pos
-    
-    if eof:
-      handler.seek(0, io.SEEK_END)
-      archive_len = handler.tell()
-      handler.seek((num_files + 1) * 4)
-      handler.write(struct.pack("<I", archive_len))
-    
-    return table_of_contents
-  
-  def pack_txt(self, filename):
-    
-    if os.path.basename(os.path.dirname(filename)) in SCRIPT_NONSTOP:
-      is_nonstop = True
-    else:
-      is_nonstop = False
-  
-    text = text_files.load_text(filename)
-    text = RE_SCRIPT.sub(u"\g<1>", text)
-    
-    # Nonstop Debate lines need an extra newline at the end
-    # so they show up in the backlog properly.
-    if is_nonstop and not text[-1] == "\n":
-      text += "\n"
-    
-    return SCRIPT_BOM.bytes + bytearray(text, encoding = "UTF-16LE") + SCRIPT_NULL.bytes
-    
-  def pack_lin(self, dir):
-    
-    # Collect our files.
-    file_list = sorted(list_all_files(dir))
-    
-    txt = [filename for filename in file_list if os.path.splitext(filename)[1].lower() == ".txt"]
-    wrd = [filename for filename in file_list if os.path.splitext(filename)[1].lower() == ".wrd"]
-    py  = [filename for filename in file_list if os.path.splitext(filename)[1].lower() == ".py"]
-    
-    # If there are more than one for whatever reason, just take the first.
-    # We only have use for a single wrd or python file.
-    wrd = wrd[0] if wrd else None
-    py  = py[0]  if py  else None
-    
-    # Prepare our temporary output directory.
-    temp_dir = tempfile.mkdtemp(prefix = "sdse-")
-    
-    # Where we're outputting our wrd file, regardless of whether it's a python
-    # file or a raw binary data file.
-    wrd_dst = os.path.join(temp_dir, "0.scp.wrd")
-    
-    if py:
-      # _LOGGER.info("Compiling %s to binary." % py)
-      try:
-        wrd_file = WrdFile(py)
-      except:
-        _LOGGER.warning("%s failed to compile. Parsing wrd file instead. Exception info:\n%s" % (py, traceback.format_exc()))
-        shutil.copy(wrd, wrd_dst)
-      else:
-        # If we succeeded in loading the python file, compile it to binary.
-        # wrd_file.save_bin(wrd)
-        wrd_file.save_bin(wrd_dst)
-    
-    else:
-      shutil.copy(wrd, wrd_dst)
-    
-    # Pack the text files in-place to save us a bunch of copying
-    # and then move it to the tmp directory with the wrd file.
-    if txt:
-      with io.FileIO(os.path.join(temp_dir, "1.dat"), "w") as h:
-        self.pack_dir(dir, h, file_list = txt)
-    
-    # Then pack it like normal.
-    data = io.BytesIO()
-    with io.BufferedWriter(data) as h:
-      self.pack_dir(temp_dir, h)
-      h.flush()
-      data = data.getvalue()
-    
-    shutil.rmtree(temp_dir)
-    
-    return data
+    self.progress.close()
 
 if __name__ == "__main__":
   pass
   # import sys
   # app = QtGui.QApplication(sys.argv)
   
-  packer = CpkPacker()
+  # packer = DatPacker()
   
   #start = time.time()
-  packer.create_archives()
+  # packer.create_archives()
   #print "Took %s seconds to create the archives." % (time.time() - start)
 
 ### EOF ###
