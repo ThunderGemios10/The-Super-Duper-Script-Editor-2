@@ -3551,7 +3551,6 @@ SCRIPT_MAP = [
       "48_TwilightText.pak",
       "49_Novel.pak",
       "bin_help_font_l.pak",
-      "bin_help_font_l.pak",
       "bin_pb_font_l.pak",
       "bin_progress_font_l.pak",
       "bin_special_font_l.pak",
