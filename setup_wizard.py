@@ -308,14 +308,15 @@ class SetupWizard(QtGui.QDialog):
       with open(blank, "wb") as f:
         pass
     
+    # NOTE: To re-enable this, Simply remove the hashtag before the codes.
     # Copy the decrypted EBOOT into the ISO folder and apply our hacks to it.
-    progress.setLabelText("Hacking EBOOT...")
-    progress.setValue(progress.value() + 1)
+    # progress.setLabelText("Hacking EBOOT...")
+    # progress.setValue(progress.value() + 1)
     
-    hacked_eboot = BitStream(filename = self.eboot_path)
-    hacked_eboot = apply_eboot_patches(hacked_eboot)
-    with open(os.path.join(self.edited_iso_dir, "PSP_GAME", "SYSDIR", "EBOOT.BIN"), "wb") as f:
-      hacked_eboot.tofile(f)
+    # hacked_eboot = BitStream(filename = self.eboot_path)
+    # hacked_eboot = apply_eboot_patches(hacked_eboot)
+    # with open(os.path.join(self.edited_iso_dir, "PSP_GAME", "SYSDIR", "EBOOT.BIN"), "wb") as f:
+      #hacked_eboot.tofile(f)
     # shutil.copy(self.eboot_path, os.path.join(self.edited_iso_dir, "PSP_GAME", "SYSDIR", "EBOOT.BIN"))
     
     progress.setLabelText("Extracting editor data...")
