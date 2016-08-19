@@ -37,7 +37,7 @@ If you want to set up a workspace, check out the code in `extract/cpk.py`. If so
     * A Windows binary is included in `tools`.
 
 # Note:
-   * You will need to download some required files to get this to work. Check "Releases", Download those files and place them in "data" folder.
+   * You will need to download the gfx for the editor to work. Check "Releases" and add it to /data/ folder.
 
 
 ## Licensing and legal stuff
