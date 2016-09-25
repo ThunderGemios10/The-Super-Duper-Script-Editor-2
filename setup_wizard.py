@@ -174,6 +174,8 @@ class SetupWizard(QtGui.QDialog):
     
     self.eboot_path = eboot_path
     self.show_info("EBOOT.BIN looks good.")
+    self.ui.grpStep3.setEnabled(False)
+    self.ui.grpStep4.setEnabled(True)
 
   def skip_eboot(self):
     
