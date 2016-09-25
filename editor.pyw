@@ -58,8 +58,7 @@ def check_config():
      not os.path.isdir (cfg.iso_dir) or \
      not os.path.isfile(cfg.similarity_db) or \
      not os.path.isfile(cfg.terminology) or \
-     not os.path.isdir (cfg.data01_dir) or \
-     not os.path.isdir (cfg.voice_dir):
+    not os.path.isdir (cfg.data01_dir):
     show_menu = True
   
   if show_menu:
