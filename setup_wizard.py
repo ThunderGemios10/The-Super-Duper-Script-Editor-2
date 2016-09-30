@@ -360,7 +360,7 @@ class SetupWizard(QtGui.QDialog):
     progress.setValue(0)
     
     # Extract the images we can't just take directly from the game's data.
-    gfx_bin = zipfile.ZipFile("data/gfx_base.zip", "r")
+    gfx_bin = zipfile.ZipFile("data/dr2_editor_gfx.rar", "r")
     progress.setValue(1)
     progress.setValue(2)
     gfx_bin.extractall(gfx_dir)
