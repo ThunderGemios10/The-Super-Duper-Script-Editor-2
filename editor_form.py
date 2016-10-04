@@ -438,7 +438,7 @@ class EditorForm(QtGui.QMainWindow):
     self.hide()
     
     anagram_editor = AnagramEditor()
-    path = os.path.join(common.editor_config.data01_dir, anagram)
+    path = os.path.join(common.editor_config.data01_dir_jp_all, anagram)
     anagram_editor.load(path)
     anagram_editor.exec_()
     
